@@ -39,13 +39,13 @@ include_once 'includes/SocialWalker.php';
 			<h3><?= __('Want to get jobs to whatsapp?', 'tailpress') ?></h3>
 		</div>
 
-		<div class="">
+		<div class="hidden md:block">
 			<?php 		// Social Menu
 			wp_nav_menu(
 				array(
 					'container_id'    => 'footer-social',
 					'container_class' => 'mt-1 mb-2',
-					'menu_class'      => 'flex justify-start lg:flex-col',
+					'menu_class'      => 'flex justify-start',
 					'theme_location'  => 'footer-social',
 					'li_class'        => 'px-2 mt-2',
 					'walker' => new social_walker,

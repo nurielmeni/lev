@@ -4,50 +4,49 @@
 
 @import "custom.css";
 
+/* a18i */
+.visible-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.visible-hidden:focus {
+    clip: auto;
+    height: auto;
+    overflow: auto;
+    position: absolute;
+    width: auto;
+}
+
+/* Social Icons */
 li.social {
     display: flex;
     align-items: center;
-    justify-content: start;
-    margin-bottom: 10px;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin-inline-end: 0.875rem;
 }
 
 li.social>a {
-    padding-inline-start: 0.5rem;
+    background-color: white;
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
 }
 
-li.social>span.social-icon {
-    min-width: 32px;
-    height: 32px;
-    background-size: 32px 32px;
+.icon-facebook {
+    background: url("../images/facebook.svg") no-repeat;
 }
 
-li.social>span.social-icon>a {
-    font-size: 1px;
-    padding: 16px;
-    position: absolute;
+.icon-linkedin {
+    background: url("../images/linkedin.svg") no-repeat;
 }
 
-li.social.he {
-    flex-direction: row-reverse;
-}
-
-li.transparent-text {
-    background-position-x: center;
-    padding-inline-start: 0;
-}
-
-.fb-circle-white span.social-icon {
-    background: url("../images/fb_circle_white.svg") no-repeat;
-}
-
-.in-circle-white span.social-icon {
-    background: url("../images/in_circle_white.svg") no-repeat;
-}
-
-.mail-circle-white span.social-icon {
-    background: url("../images/mail_circle_white.svg") no-repeat;
-}
-
-.home-circle-white span.social-icon {
-    background: url("../images/home_circle_white.svg") no-repeat;
+.icon-home {
+    background: url("../images/home.svg") no-repeat;
 }
