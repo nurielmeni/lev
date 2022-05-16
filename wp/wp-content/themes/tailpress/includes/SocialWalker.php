@@ -7,7 +7,7 @@ class social_walker extends Walker_Nav_Menu
     $output .= sprintf(
       '<li id="menu-item-%d" class="%s">
         <a target="%s" href="%s">
-          <i class="icon-%s" aria-hidden="true"></i>
+          <i class="btn-icon icon-%s" aria-hidden="true"></i>
           <span class="visible-hidden">%s</span>
         </a>',
       $item->ID,

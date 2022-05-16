@@ -14,9 +14,9 @@ include_once 'includes/SocialWalker.php';
 <footer id="colophon" class="site-footer bg-primary" role="contentinfo">
 	<?php do_action('tailpress_footer'); ?>
 
-	<div class="container mx-auto flex flex-col justify-center lg:flex-row lg:justify-between items-top primary text-white">
-		<div class="">
-			<h3><?= __('General Information', 'tailpress') ?></h3>
+	<div class="container mx-auto flex flex-col justify-center lg:flex-row lg:justify-start items-top primary text-white">
+		<div class="area">
+			<h3 class="text-3xl"><?= __('General Information', 'tailpress') ?></h3>
 			<?php		// General Info
 			wp_nav_menu(
 				array(
@@ -31,21 +31,21 @@ include_once 'includes/SocialWalker.php';
 			?>
 		</div>
 
-		<div class="">
-			<h3><?= __('Contact', 'tailpress') ?></h3>
+		<div class="area">
+			<h3 class="text-3xl"><?= __('Contact', 'tailpress') ?></h3>
 		</div>
 
-		<div class="">
-			<h3><?= __('Want to get jobs to whatsapp?', 'tailpress') ?></h3>
+		<div class="area">
+			<h3 class="text-3xl"><?= __('Want to get jobs to whatsapp?', 'tailpress') ?></h3>
 		</div>
 
-		<div class="hidden md:block">
+		<div class="area hidden md:block mr-auto">
 			<?php 		// Social Menu
 			wp_nav_menu(
 				array(
 					'container_id'    => 'footer-social',
 					'container_class' => 'mt-1 mb-2',
-					'menu_class'      => 'flex justify-start',
+					'menu_class'      => 'flex justify-start gap-3',
 					'theme_location'  => 'footer-social',
 					'li_class'        => 'px-2 mt-2',
 					'walker' => new social_walker,

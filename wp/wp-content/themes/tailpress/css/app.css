@@ -518,6 +518,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 2rem;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -581,6 +585,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-12 {
   margin-bottom: 3rem;
+}
+
+.mr-auto {
+  margin-right: auto;
 }
 
 .inline-block {
@@ -665,6 +673,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .rounded {
@@ -770,6 +782,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -778,11 +795,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .font-light {
@@ -1031,8 +1043,6 @@ li.social {
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  -webkit-margin-end: 0.875rem;
-          margin-inline-end: 0.875rem;
 }
 
 li.social>a {
@@ -1040,6 +1050,20 @@ li.social>a {
   border-radius: 50px;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+i.btn-icon {
+  background-position: center center;
+  background-size: contain;
+}
+
+li.social>a>i {
+  width: 2rem;
+  height: 2rem;
+  display: block;
 }
 
 .icon-facebook {
@@ -1053,6 +1077,8 @@ li.social>a {
 .icon-home {
   background: url("../images/home.svg") no-repeat;
 }
+
+/* Footer */
 
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
@@ -1141,6 +1167,10 @@ li.social>a {
 
   .lg\:items-center {
     align-items: center;
+  }
+
+  .lg\:justify-start {
+    justify-content: flex-start;
   }
 
   .lg\:justify-between {

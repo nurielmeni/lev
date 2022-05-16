@@ -48,6 +48,10 @@
   margin: 2rem
 }
 
+.m-auto {
+  margin: auto
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem
@@ -116,6 +120,10 @@
 
 .mb-12 {
   margin-bottom: 3rem
+}
+
+.mr-auto {
+  margin-right: auto
 }
 
 .inline-block {
@@ -204,6 +212,10 @@
 
 .justify-between {
   justify-content: space-between
+}
+
+.gap-3 {
+  gap: 0.75rem
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -615,6 +627,10 @@ body {
 
   .lg\:items-center {
     align-items: center
+  }
+
+  .lg\:justify-start {
+    justify-content: flex-start
   }
 
   .lg\:justify-between {
