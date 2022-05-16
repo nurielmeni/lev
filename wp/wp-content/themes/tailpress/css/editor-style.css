@@ -236,6 +236,11 @@
   border-width: 1px
 }
 
+.border-y-2 {
+  border-top-width: 2px;
+  border-bottom-width: 2px
+}
+
 .border-b {
   border-bottom-width: 1px
 }
@@ -311,6 +316,11 @@
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem
 }
 
 .pl-5 {
@@ -601,6 +611,11 @@ body {
     margin-right: 1rem
   }
 
+  .lg\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px
+  }
+
   .lg\:mt-0 {
     margin-top: 0px
   }
@@ -637,12 +652,32 @@ body {
     justify-content: space-between
   }
 
+  .lg\:border-x-2 {
+    border-left-width: 2px;
+    border-right-width: 2px
+  }
+
+  .lg\:border-y-0 {
+    border-top-width: 0px;
+    border-bottom-width: 0px
+  }
+
   .lg\:bg-transparent {
     background-color: transparent
   }
 
   .lg\:p-0 {
     padding: 0px
+  }
+
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem
+  }
+
+  .lg\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px
   }
 
   .lg\:text-7xl {

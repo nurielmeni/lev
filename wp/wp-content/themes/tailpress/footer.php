@@ -31,7 +31,7 @@ include_once 'includes/SocialWalker.php';
 			?>
 		</div>
 
-		<div class="area">
+		<div class="area border-y-2 my-4 py-4 lg:border-y-0 lg:my-0 lg:py-0 lg:border-x-2 lg:mx-4 lg:px-4">
 			<h3 class="text-3xl"><?= __('Contact', 'tailpress') ?></h3>
 		</div>
 
