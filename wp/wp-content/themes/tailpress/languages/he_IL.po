@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TailPress\n"
+"POT-Creation-Date: 2022-05-17 16:31+0300\n"
+"PO-Revision-Date: 2022-05-17 16:50+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: 404.php:16
+msgid "Sorry, the page you are looking for could not be found."
+msgstr "מצטערים, הדף המבוקש לא נמצא."
+
+#: 404.php:18
+msgid "Go Home"
+msgstr "לדף הבית"
+
+#: comments.php:18
+#, php-format
+msgctxt "comments title"
+msgid "One comment"
+msgid_plural "%1$s comments"
+msgstr[0] "הערה אחת"
+msgstr[1] "שתי הערות"
+msgstr[2] "%1$s הערות"
+msgstr[3] "%1$s הערות"
+
+#: comments.php:43
+msgid "Comment navigation"
+msgstr "ניווט הערה"
+
+#: comments.php:47
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:53
+msgid "Newer Comments &rarr;"
+msgstr "הערות חדשות יותר &rarr;"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "הערות לא פעיל."
+
+#: footer.php:19
+msgid "General Information"
+msgstr "מידע כללי"
+
+#: footer.php:35
+msgid "Contact"
+msgstr "צרו איתנו קשר"
+
+#: footer.php:39
+msgid "Want to get jobs to whatsapp?"
+msgstr "רוצים לקבל משרות לוואטסאפ?"
+
+#: footer.php:59
+msgid "All rights reserved to Lev Istitution."
+msgstr "כל הזכויות שמורות למרכז האקדמי לב."
+
+#: functions.php:12
+msgid "Primary Menu"
+msgstr "תפריט ראשי"
+
+#: functions.php:13
+msgid "Header Social Menu"
+msgstr "תפריט רשתות חברתיות כותרת"
+
+#: functions.php:14
+msgid "Footer Menu"
+msgstr "תפריט פוטר"
+
+#: functions.php:15
+msgid "Footer Social Menu"
+msgstr "תפריט רשתות חברתיות פוטר"
+
+#: template-parts/content-single.php:14 template-parts/content.php:28
+msgid "Pages:"
+msgstr "דפים:"
+
+#: template-parts/content-single.php:18 template-parts/content.php:32
+msgid "Page"
+msgstr "דף"
+
+#: template-parts/content.php:21
+#, php-format
+msgid "Continue reading %s"
+msgstr "המשך לקרוא %s"
+
+#. Theme Name of the plugin/theme
+msgid "TailPress"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/jeffreyvr/tailpress"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "TailPress is a simple boilerplate WordPress theme with Tailwind CSS."
+msgstr "TailPress היא תבנית בסיסית לוורדפרס עם tailwinds CSS."
+
+#. Author of the plugin/theme
+msgid "Jeffrey van Rossum"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://vanrossum.dev"
+msgstr ""

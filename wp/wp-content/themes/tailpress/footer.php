@@ -11,7 +11,7 @@ include_once 'includes/SocialWalker.php';
 
 <?php do_action('tailpress_content_after'); ?>
 
-<footer id="colophon" class="site-footer bg-primary" role="contentinfo">
+<footer id="colophon" class="site-footer bg-primary pt-8 pb-4" role="contentinfo">
 	<?php do_action('tailpress_footer'); ?>
 
 	<div class="container mx-auto flex flex-col justify-center lg:flex-row lg:justify-start items-top primary text-white">
@@ -56,7 +56,7 @@ include_once 'includes/SocialWalker.php';
 		</div>
 	</div>
 	<div class="container mx-auto flex flex-col justify-start text-white mt-8">
-		&copy; <?php echo date_i18n('Y'); ?> - <?= _e('All rights reserved to Lev Istitution.', 'lev') ?>
+		&copy; <?php echo date_i18n('Y'); ?> - <?= _e('All rights reserved to Lev Istitution.', 'tailpress') ?>
 		<div class="text-sm">
 			Powered by <a href="https://niloosoft.com/he/">Niloosoft</a> </div>
 	</div>
