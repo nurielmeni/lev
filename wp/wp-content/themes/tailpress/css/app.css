@@ -696,6 +696,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-width: 1px;
 }
 
+.border-l-2 {
+  border-left-width: 2px;
+}
+
 .border-primary {
   --tw-border-opacity: 1;
   border-color: rgb(18 51 113 / var(--tw-border-opacity));
@@ -728,6 +732,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-grad-1 {
+  --tw-gradient-from: #3E276D;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(62 39 109 / 0));
+}
+
+.via-grad-2 {
+  --tw-gradient-stops: var(--tw-gradient-from), #3D94B3, var(--tw-gradient-to, rgb(61 148 179 / 0));
+}
+
+.to-grad-3 {
+  --tw-gradient-to: #3D94B3;
 }
 
 .p-4 {
@@ -774,16 +795,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.5rem;
 }
 
-.pb-12 {
-  padding-bottom: 3rem;
-}
-
 .pt-8 {
   padding-top: 2rem;
 }
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .text-5xl {
@@ -1092,7 +1113,19 @@ li.social>a>i {
   background: url("../images/home.svg") no-repeat;
 }
 
+/* Header */
+
+header #primary-menu li:last-child {
+  border: none !important;
+}
+
 /* Footer */
+
+@media (min-width: 782px) {
+  footer .area {
+    max-width: 28%;
+  }
+}
 
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
@@ -1130,6 +1163,16 @@ li.social>a>i {
     margin-bottom: 1.5rem;
   }
 
+  .md\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .md\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1142,6 +1185,34 @@ li.social>a>i {
     width: 50%;
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .md\:border-y-0 {
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+  }
+
+  .md\:border-x-2 {
+    border-left-width: 2px;
+    border-right-width: 2px;
+  }
+
+  .md\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1149,16 +1220,6 @@ li.social>a>i {
 }
 
 @media (min-width: 960px) {
-  .lg\:mx-4 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  .lg\:my-0 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
   .lg\:-mx-4 {
     margin-left: -1rem;
     margin-right: -1rem;
@@ -1166,6 +1227,10 @@ li.social>a>i {
 
   .lg\:mt-0 {
     margin-top: 0px;
+  }
+
+  .lg\:ml-4 {
+    margin-left: 1rem;
   }
 
   .lg\:block {
@@ -1180,30 +1245,12 @@ li.social>a>i {
     display: none;
   }
 
-  .lg\:flex-row {
-    flex-direction: row;
-  }
-
   .lg\:items-center {
     align-items: center;
   }
 
-  .lg\:justify-start {
-    justify-content: flex-start;
-  }
-
   .lg\:justify-between {
     justify-content: space-between;
-  }
-
-  .lg\:border-y-0 {
-    border-top-width: 0px;
-    border-bottom-width: 0px;
-  }
-
-  .lg\:border-x-2 {
-    border-left-width: 2px;
-    border-right-width: 2px;
   }
 
   .lg\:bg-transparent {
@@ -1214,14 +1261,8 @@ li.social>a>i {
     padding: 0px;
   }
 
-  .lg\:py-0 {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
-  .lg\:px-4 {
+  .lg\:pl-4 {
     padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   .lg\:text-7xl {

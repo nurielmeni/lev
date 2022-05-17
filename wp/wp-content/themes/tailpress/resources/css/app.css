@@ -64,4 +64,16 @@ li.social>a>i {
     background: url("../images/home.svg") no-repeat;
 }
 
+
+/* Header */
+header #primary-menu li:last-child {
+    border: none !important;
+}
+
 /* Footer */
+@media (min-width: 782px) {
+
+    footer .area {
+        max-width: 28%;
+    }
+}

@@ -14,9 +14,9 @@ include_once 'includes/SocialWalker.php';
 <footer id="colophon" class="site-footer bg-primary pt-8 pb-4" role="contentinfo">
 	<?php do_action('tailpress_footer'); ?>
 
-	<div class="container mx-auto flex flex-col justify-center lg:flex-row lg:justify-start items-top primary text-white">
+	<div class="container mx-auto flex flex-col justify-center md:flex-row md:justify-start items-top primary text-white">
 		<div class="area">
-			<h3 class="text-3xl"><?= __('General Information', 'tailpress') ?></h3>
+			<h3 class="text-3xl font-bold"><?= __('General Information', 'tailpress') ?></h3>
 			<?php		// General Info
 			wp_nav_menu(
 				array(
@@ -24,22 +24,26 @@ include_once 'includes/SocialWalker.php';
 					'container_class' => '',
 					'menu_class'      => '',
 					'theme_location'  => 'footer',
-					'li_class'        => 'lg:mx-4',
+					'li_class'        => 'text-2xl',
 					'fallback_cb'     => false,
 				)
 			);
 			?>
 		</div>
 
-		<div class="area border-y-2 my-4 py-4 lg:border-y-0 lg:my-0 lg:py-0 lg:border-x-2 lg:mx-4 lg:px-4">
-			<h3 class="text-3xl"><?= __('Contact', 'tailpress') ?></h3>
+		<div class="area text-2xl border-y-2 my-4 py-4 md:border-y-0 md:my-0 md:py-0 md:border-x-2 md:mx-4 md:px-4">
+			<h3 class="text-3xl font-bold"><?= __('Contact', 'tailpress') ?></h3>
+			<p><?= __('Message to career center - also Whatsapp', 'tailpress') ?>&nbsp;<a target="_blank" href="tel:026751063">02-6751063</a></p>
+			<p><a target="_blank" href="mailto:hasama@jct.ac.il">hasama@jct.ac.il</a></p>
 		</div>
 
-		<div class="area">
-			<h3 class="text-3xl"><?= __('Want to get jobs to whatsapp?', 'tailpress') ?></h3>
+		<div class="area text-2xl">
+			<h3 class="text-3xl font-bold"><?= __('Want to get jobs to whatsapp?', 'tailpress') ?></h3>
+			<p><?= __('Send us whatsapp with your area of study and we will send you a link', 'tailpress') ?></p>
+			<p><a target="_blank" href="https://wa.me/+97226751063">02-6751063</a></p>
 		</div>
 
-		<div class="area hidden md:block mr-auto">
+		<div class="area text-2xl hidden md:block mr-auto">
 			<?php 		// Social Menu
 			wp_nav_menu(
 				array(
@@ -58,7 +62,7 @@ include_once 'includes/SocialWalker.php';
 	<div class="container mx-auto flex flex-col justify-start text-white mt-8">
 		&copy; <?php echo date_i18n('Y'); ?> - <?= _e('All rights reserved to Lev Istitution.', 'tailpress') ?>
 		<div class="text-sm">
-			Powered by <a href="https://niloosoft.com/he/">Niloosoft</a> </div>
+			Powered by <a target="_blank" href="https://niloosoft.com/he/">Niloosoft</a> </div>
 	</div>
 </footer>
 

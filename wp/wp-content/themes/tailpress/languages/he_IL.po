@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TailPress\n"
-"POT-Creation-Date: 2022-05-17 16:31+0300\n"
-"PO-Revision-Date: 2022-05-17 16:50+0300\n"
+"POT-Creation-Date: 2022-05-17 23:27+0300\n"
+"PO-Revision-Date: 2022-05-17 23:29+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -47,7 +47,7 @@ msgstr "ניווט הערה"
 
 #: comments.php:47
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "‫&larr; תגובות קודמות"
 
 #: comments.php:53
 msgid "Newer Comments &rarr;"
@@ -65,11 +65,19 @@ msgstr "מידע כללי"
 msgid "Contact"
 msgstr "צרו איתנו קשר"
 
-#: footer.php:39
+#: footer.php:36
+msgid "Message to career center - also Whatsapp"
+msgstr "פנייה למרכז קריירה - גם בוואטסאפ"
+
+#: footer.php:41
 msgid "Want to get jobs to whatsapp?"
 msgstr "רוצים לקבל משרות לוואטסאפ?"
 
-#: footer.php:59
+#: footer.php:42
+msgid "Send us whatsapp with your area of study and we will send you a link"
+msgstr "שלחו לנו הודעת וואטסאפ עם תחום הלימוד שלכם ונשלח לכם קישור"
+
+#: footer.php:63
 msgid "All rights reserved to Lev Istitution."
 msgstr "כל הזכויות שמורות למרכז האקדמי לב."
 
