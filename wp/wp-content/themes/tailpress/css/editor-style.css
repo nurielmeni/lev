@@ -209,6 +209,10 @@
   gap: 0.75rem
 }
 
+.gap-2 {
+  gap: 0.5rem
+}
+
 .rounded {
   border-radius: 0.25rem
 }

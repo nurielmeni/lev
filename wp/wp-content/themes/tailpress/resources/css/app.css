@@ -31,6 +31,11 @@ li.social {
   height: 3rem;
 }
 
+#header-social li.social {
+  width: 2.125rem;
+  height: 2.125rem;
+}
+
 li.social > a {
   background-color: white;
   border-radius: 50px;
@@ -50,6 +55,11 @@ li.social > a > i {
   width: 2rem;
   height: 2rem;
   display: block;
+}
+
+#header-social li.social > a > i {
+  width: 1.375rem;
+  height: 1.375rem;
 }
 
 .icon-facebook {
