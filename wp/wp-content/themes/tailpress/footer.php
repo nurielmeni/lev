@@ -16,7 +16,7 @@ include_once 'includes/SocialWalker.php';
 
 	<div class="container mx-auto flex flex-col justify-center md:flex-row md:justify-start items-top primary text-white">
 		<div class="area">
-			<h3 class="text-3xl font-bold"><?= __('General Information', 'tailpress') ?></h3>
+			<h3 class="text-3xl font-bold mb-6"><?= __('General Information', 'tailpress') ?></h3>
 			<?php		// General Info
 			wp_nav_menu(
 				array(
@@ -32,13 +32,13 @@ include_once 'includes/SocialWalker.php';
 		</div>
 
 		<div class="area text-2xl border-y-2 my-4 py-4 md:border-y-0 md:my-0 md:py-0 md:border-x-2 md:mx-4 md:px-4">
-			<h3 class="text-3xl font-bold"><?= __('Contact', 'tailpress') ?></h3>
+			<h3 class="text-3xl font-bold mb-6"><?= __('Contact', 'tailpress') ?></h3>
 			<p><?= __('Message to career center - also Whatsapp', 'tailpress') ?>&nbsp;<a target="_blank" href="tel:026751063">02-6751063</a></p>
 			<p><a target="_blank" href="mailto:hasama@jct.ac.il">hasama@jct.ac.il</a></p>
 		</div>
 
 		<div class="area text-2xl">
-			<h3 class="text-3xl font-bold"><?= __('Want to get jobs to whatsapp?', 'tailpress') ?></h3>
+			<h3 class="text-3xl font-bold mb-6"><?= __('Want to get jobs to whatsapp?', 'tailpress') ?></h3>
 			<p><?= __('Send us whatsapp with your area of study and we will send you a link', 'tailpress') ?></p>
 			<p><a target="_blank" href="https://wa.me/+97226751063">02-6751063</a></p>
 		</div>

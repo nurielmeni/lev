@@ -1,3 +1,7 @@
+<?php
+include_once 'includes/SocialWalker.php';
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -18,27 +22,28 @@
 
 		<?php do_action('tailpress_header'); ?>
 
-		<header class="bg-gradient-to-r from-grad-1 via-grad-2 to-grad-3">
+		<header class="flex items-center bg-gradient-to-r from-grad-1 via-grad-2 to-grad-3">
 
+			<div>
+				<?php if (has_custom_logo()) { ?>
+					<?php the_custom_logo(); ?>
+				<?php } else { ?>
+					<div class="text-lg uppercase">
+						<a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
+							<?php echo get_bloginfo('name'); ?>
+						</a>
+					</div>
+
+					<p class="text-sm font-light text-gray-600">
+						<?php echo get_bloginfo('description'); ?>
+					</p>
+
+				<?php } ?>
+			</div>
 			<div class="mx-auto container">
 				<div class="lg:flex lg:justify-between lg:items-center py-6">
+
 					<div class="flex justify-between items-center">
-						<div>
-							<?php if (has_custom_logo()) { ?>
-								<?php the_custom_logo(); ?>
-							<?php } else { ?>
-								<div class="text-lg uppercase">
-									<a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
-										<?php echo get_bloginfo('name'); ?>
-									</a>
-								</div>
-
-								<p class="text-sm font-light text-gray-600">
-									<?php echo get_bloginfo('description'); ?>
-								</p>
-
-							<?php } ?>
-						</div>
 
 						<div class="lg:hidden">
 							<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
@@ -61,6 +66,20 @@
 							'menu_class'      => 'lg:flex lg:-mx-4',
 							'theme_location'  => 'primary',
 							'li_class'        => 'text-2xl text-white lg:ml-4 lg:pl-4 border-l-2',
+							'fallback_cb'     => false,
+						)
+					);
+					?>
+
+					<?php 		// Social Menu
+					wp_nav_menu(
+						array(
+							'container_id'    => 'header-social',
+							'container_class' => 'mt-1 mb-2',
+							'menu_class'      => 'flex justify-start gap-2',
+							'theme_location'  => 'header-social',
+							'li_class'        => 'px-2 mt-2',
+							'walker' => new social_walker,
 							'fallback_cb'     => false,
 						)
 					);
