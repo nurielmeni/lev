@@ -547,6 +547,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mr-auto {
   margin-right: auto;
 }
@@ -1080,7 +1084,7 @@ li.social {
   height: 3rem;
 }
 
-li.social>a {
+li.social > a {
   background-color: white;
   border-radius: 50px;
   width: 100%;
@@ -1095,7 +1099,7 @@ i.btn-icon {
   background-size: contain;
 }
 
-li.social>a>i {
+li.social > a > i {
   width: 2rem;
   height: 2rem;
   display: block;
@@ -1124,6 +1128,13 @@ header #primary-menu li:last-child {
 @media (min-width: 782px) {
   footer .area {
     max-width: 28%;
+    padding-left: max(1rem, 2.5vw);
+    padding-right: max(1rem, 2.5vw);
+  }
+
+  footer .area:first-child,
+  footer .area:last-child {
+    padding-right: 0;
   }
 }
 

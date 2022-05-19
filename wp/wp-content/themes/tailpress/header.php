@@ -20,25 +20,26 @@
 
 		<header class="bg-gradient-to-r from-grad-1 via-grad-2 to-grad-3">
 
+			<div>
+				<?php if (has_custom_logo()) { ?>
+					<?php the_custom_logo(); ?>
+				<?php } else { ?>
+					<div class="text-lg uppercase">
+						<a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
+							<?php echo get_bloginfo('name'); ?>
+						</a>
+					</div>
+
+					<p class="text-sm font-light text-gray-600">
+						<?php echo get_bloginfo('description'); ?>
+					</p>
+
+				<?php } ?>
+			</div>
 			<div class="mx-auto container">
 				<div class="lg:flex lg:justify-between lg:items-center py-6">
+
 					<div class="flex justify-between items-center">
-						<div>
-							<?php if (has_custom_logo()) { ?>
-								<?php the_custom_logo(); ?>
-							<?php } else { ?>
-								<div class="text-lg uppercase">
-									<a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
-										<?php echo get_bloginfo('name'); ?>
-									</a>
-								</div>
-
-								<p class="text-sm font-light text-gray-600">
-									<?php echo get_bloginfo('description'); ?>
-								</p>
-
-							<?php } ?>
-						</div>
 
 						<div class="lg:hidden">
 							<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">

@@ -6,74 +6,79 @@
 
 /* a18i */
 .visible-hidden {
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .visible-hidden:focus {
-    clip: auto;
-    height: auto;
-    overflow: auto;
-    position: absolute;
-    width: auto;
+  clip: auto;
+  height: auto;
+  overflow: auto;
+  position: absolute;
+  width: auto;
 }
 
 /* Social Icons */
 li.social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
 }
 
-li.social>a {
-    background-color: white;
-    border-radius: 50px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+li.social > a {
+  background-color: white;
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 i.btn-icon {
-    background-position: center center;
-    background-size: contain;
+  background-position: center center;
+  background-size: contain;
 }
 
-li.social>a>i {
-    width: 2rem;
-    height: 2rem;
-    display: block;
+li.social > a > i {
+  width: 2rem;
+  height: 2rem;
+  display: block;
 }
 
 .icon-facebook {
-    background: url("../images/facebook.svg") no-repeat;
+  background: url("../images/facebook.svg") no-repeat;
 }
 
 .icon-linkedin {
-    background: url("../images/linkedin.svg") no-repeat;
+  background: url("../images/linkedin.svg") no-repeat;
 }
 
 .icon-home {
-    background: url("../images/home.svg") no-repeat;
+  background: url("../images/home.svg") no-repeat;
 }
-
 
 /* Header */
 header #primary-menu li:last-child {
-    border: none !important;
+  border: none !important;
 }
 
 /* Footer */
 @media (min-width: 782px) {
+  footer .area {
+    max-width: 28%;
+    padding-left: max(1rem, 2.5vw);
+    padding-right: max(1rem, 2.5vw);
+  }
 
-    footer .area {
-        max-width: 28%;
-    }
+  footer .area:first-child,
+  footer .area:last-child {
+    padding-right: 0;
+  }
 }
