@@ -24,9 +24,11 @@ include_once 'includes/SocialWalker.php';
 
 		<header class="flex items-center bg-gradient-to-r from-grad-1 via-grad-2 to-grad-3">
 
-			<div>
+			<div class="logo-wrapper">
 				<?php if (has_custom_logo()) { ?>
-					<?php the_custom_logo(); ?>
+					<div>
+						<?php the_custom_logo(); ?>
+					</div>
 				<?php } else { ?>
 					<div class="text-lg uppercase">
 						<a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
@@ -40,29 +42,13 @@ include_once 'includes/SocialWalker.php';
 
 				<?php } ?>
 			</div>
-			<div class="mx-auto container">
-				<div class="lg:flex lg:justify-between lg:items-center py-6">
-
-					<div class="flex justify-between items-center">
-
-						<div class="lg:hidden">
-							<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
-								<svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-										<g id="icon-shape">
-											<path d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z" id="Combined-Shape"></path>
-										</g>
-									</g>
-								</svg>
-							</a>
-						</div>
-					</div>
-
+			<div class="mx-auto container p-0 lg:px-4">
+				<div class="flex justify-end lg:justify-between items-center py-2 lg:py-6">
 					<?php
 					wp_nav_menu(
 						array(
 							'container_id'    => 'primary-menu',
-							'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+							'container_class' => 'hidden bg-gray-100 mt-4 mr-10 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 							'menu_class'      => 'lg:flex lg:-mx-4',
 							'theme_location'  => 'primary',
 							'li_class'        => 'text-2xl text-white lg:ml-4 lg:pl-4 border-l-2',
@@ -75,7 +61,7 @@ include_once 'includes/SocialWalker.php';
 					wp_nav_menu(
 						array(
 							'container_id'    => 'header-social',
-							'container_class' => 'mt-1 mb-2',
+							'container_class' => 'hidden xl:block mt-12 mr-auto ml-10',
 							'menu_class'      => 'flex justify-start gap-2',
 							'theme_location'  => 'header-social',
 							'li_class'        => 'px-2 mt-2',
@@ -84,6 +70,14 @@ include_once 'includes/SocialWalker.php';
 						)
 					);
 					?>
+
+					<div class="flex items-start">
+						<img class="object-contain pt-2" src="<?= get_template_directory_uri() . '/images/your-way.png' ?>" alt="" width="40" height="40">
+						<div class="text-white px-3 lg:px-5">
+							<p class="text-2xl lg:text-4xl font-bold leading-4 lg:leading-6">מרכז<br>קריירה</p>
+							<p class="text-xs lg:text-sm leading-4 mt-2">מאקדמיה לתעסוקה<br>בדרך שלך</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -92,16 +86,7 @@ include_once 'includes/SocialWalker.php';
 
 			<?php if (is_front_page()) { ?>
 				<!-- Start introduction -->
-				<div class="container mx-auto my-12 border-b pb-12">
-					<h1 class="font-bold text-lg text-secondary uppercase">TailPress</h1>
-					<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold my-4">Rapidly build your WordPress theme
-						with <a href="https://tailwindcss.com" class="text-primary">Tailwind CSS</a>.</h2>
-					<p class="max-w-screen-lg text-gray-700 text-lg font-medium mb-10">TailPress is your go-to starting
-						point for developing WordPress themes with TailwindCSS and comes with basic block-editor support out
-						of the box.</p>
-					<a href="https://github.com/jeffreyvr/tailpress" class="w-full sm:w-auto flex-none bg-gray-900 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">View
-						on Github</a>
-				</div>
+
 				<!-- End introduction -->
 			<?php } ?>
 

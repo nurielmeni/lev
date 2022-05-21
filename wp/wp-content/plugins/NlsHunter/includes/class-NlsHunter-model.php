@@ -35,7 +35,7 @@ class NlsHunter_model
         try {
             $this->nlsSecutity = new NlsSecurity($this->nlsConfig);
         } catch (\Exception $e) {
-            $this->nlsAdminNotice(
+            $this->notice(
                 __('Could not create Model.', 'NlsHunter'),
                 __('Error: NlsHunter_model: ', 'NlsHunter')
             );
@@ -53,8 +53,7 @@ class NlsHunter_model
 
             // Check if Auth is OK and convert to object
             if ($this->nlsSecutity->isAuth() === false) {
-                //$this->nlsAdminNotice('Authentication Error', 'Can not connect to Niloos Service.');
-                //$this->nlsPublicNotice('Authentication Error', 'Can not connect to Niloos Service.');
+                $this->notice('Authentication Error', 'Can not connect to Niloos Service.');
             }
         }
 
@@ -81,34 +80,30 @@ class NlsHunter_model
         return $this->supplierId;
     }
 
-    public function front_add_message()
+    public function notice($title, $notice)
     {
-        add_filter('the_content', 'front_display_message');
+        if (is_admin()) $this->nlsAdminNotice($title, $notice);
+        else $this->nlsPublicNotice($title, $notice);
     }
 
-    public function front_display_message($msg)
+    private function nlsPublicNotice($title, $notice)
     {
-        add_filter('the_content', function ($content) use ($msg) {
-            $message = '<div class="absolute top-0 z-20 p-4 bg-danger">' . $msg . '</div>';
-            $content = "$message\n\n" . $content;
-            return $content;
-        });
+
+        ob_start();
+        echo render('notice', [
+            'title' => $title,
+            'notice' => $notice
+        ]);
+        echo ob_get_clean();
     }
 
-    public function nlsPublicNotice($title, $notice)
-    {
-        $cont = '<div class="notice notice-error"><label>' . $title . '</label><p>' . $notice . '</p></div>';
-
-        add_action('the_post', function ($post) use ($cont) {
-            echo $cont;
-        });
-    }
-
-    public function nlsAdminNotice($title, $notice)
+    private function nlsAdminNotice($title, $notice)
     {
         add_action('admin_notices', function () use ($title, $notice) {
             $class = 'notice notice-error';
+            ob_start();
             printf('<div class="%1$s"><label>%2$s</label><p>%3$s</p></div>', esc_attr($class), esc_html($title), esc_html($notice));
+            echo ob_get_clean();
         });
     }
 
@@ -148,11 +143,7 @@ class NlsHunter_model
                 ]);
             }
         } catch (\Exception $e) {
-            $this->nlsAdminNotice(
-                __('Could not init Card Services.', 'NlsHunter'),
-                __('Error: Card Services: ', 'NlsHunter')
-            );
-            $this->nlsPublicNotice(
+            $this->notice(
                 __('Could not init Card Services.', 'NlsHunter'),
                 __('Error: Card Services: ', 'NlsHunter')
             );
@@ -173,11 +164,10 @@ class NlsHunter_model
                 ]);
             }
         } catch (\Exception $e) {
-            $this->nlsAdminNotice(
+            $this->notice(
                 __('Could not init Directory Services.', 'NlsHunter'),
                 __('Error: Directory Services: ', 'NlsHunter')
             );
-            $this->front_display_message(__('Could not init Directory Services.', 'NlsHunter'));
             return null;
         }
         return true;
@@ -195,14 +185,11 @@ class NlsHunter_model
                 ]);
             }
         } catch (\Exception $e) {
-            $this->nlsAdminNotice(
+            $this->notice(
                 __('Could not init Search Services.', 'NlsHunter'),
                 __('Error: Search Services: ', 'NlsHunter')
             );
-            $this->nlsPublicNotice(
-                __('Could not init Search Services.', 'NlsHunter'),
-                __('Error: Search Services: ', 'NlsHunter')
-            );
+
             return null;
         }
         return true;
@@ -256,8 +243,13 @@ class NlsHunter_model
     public function categories()
     {
         $this->initDirectoryService();
-        $categories = $this->nlsDirectory->getCategories();
-        return $categories;
+        try {
+            $categories = $this->nlsDirectory->getCategories();
+            return $categories;
+        } catch (Exception $ex) {
+            $this->notice('Model: categories', $ex->getMessage());
+            return null;
+        }
     }
 
     public function jobScopes()
@@ -266,13 +258,17 @@ class NlsHunter_model
 
         $cacheKey = 'JOB_SCOPES';
         $jobScopes = wp_cache_get($cacheKey);
+        try {
+            if (false === $jobScopes) {
+                $jobScopes = $this->nlsDirectory->getJobScopes();
+                wp_cache_set($cacheKey, $jobScopes, 'directory', $this->nlsCacheTime);
+            }
 
-        if (false === $jobScopes) {
-            $jobScopes = $this->nlsDirectory->getJobScopes();
-            wp_cache_set($cacheKey, $jobScopes, 'directory', $this->nlsCacheTime);
+            return is_array($jobScopes) ? $jobScopes : [];
+        } catch (Exception $ex) {
+            $this->notice('Model: jobScopes', $ex->getMessage());
+            return null;
         }
-
-        return is_array($jobScopes) ? $jobScopes : [];
     }
 
     public function jobAreas()
@@ -282,12 +278,17 @@ class NlsHunter_model
         $cacheKey = 'JOB_AREAS';
         $jobAreas = wp_cache_get($cacheKey);
 
-        if (false === $jobAreas) {
-            $jobAreas = $this->nlsDirectory->getProfessionalFields();
-            wp_cache_set($cacheKey, $jobAreas, 'directory', $this->nlsCacheTime);
-        }
+        try {
+            if (false === $jobAreas) {
+                $jobAreas = $this->nlsDirectory->getProfessionalFields();
+                wp_cache_set($cacheKey, $jobAreas, 'directory', $this->nlsCacheTime);
+            }
 
-        return is_array($jobAreas) ? $jobAreas : [];
+            return is_array($jobAreas) ? $jobAreas : [];
+        } catch (Exception $ex) {
+            $this->notice('Model: jobAreas', $ex->getMessage());
+            return null;
+        }
     }
 
     public function jobRanks()
@@ -297,12 +298,26 @@ class NlsHunter_model
         $cacheKey = 'JOB_RANKS';
         $jobRanks = wp_cache_get($cacheKey);
 
-        if (false === $jobRanks) {
-            $jobRanks = $this->nlsDirectory->getJobRanks();
-            wp_cache_set($cacheKey, $jobRanks, 'directory', $this->nlsCacheTime);
-        }
+        try {
+            if (false === $jobRanks) {
+                $jobRanks = $this->nlsDirectory->getJobRanks();
+                wp_cache_set($cacheKey, $jobRanks, 'directory', $this->nlsCacheTime);
+            }
 
-        return is_array($jobRanks) ? $jobRanks : [];
+            return is_array($jobRanks) ? $jobRanks : [];
+        } catch (Exception $ex) {
+            $this->notice('Model: jobRanks', $ex->getMessage());
+            return null;
+        }
+    }
+
+    public function hybrid()
+    {
+        return [
+            'id' => 1,
+            'text' => 'Hybrid'
+
+        ];
     }
 
     public function professionalFields()
@@ -312,12 +327,17 @@ class NlsHunter_model
         $cacheKey = 'PROFESSIONAL_FIELD';
         $professionalFields = wp_cache_get($cacheKey);
 
-        if (false === $professionalFields) {
-            $professionalFields = $this->nlsDirectory->getProfessionalFields();
-            wp_cache_set($cacheKey, $professionalFields, 'directory', $this->nlsCacheTime);
-        }
+        try {
+            if (false === $professionalFields) {
+                $professionalFields = $this->nlsDirectory->getProfessionalFields();
+                wp_cache_set($cacheKey, $professionalFields, 'directory', $this->nlsCacheTime);
+            }
 
-        return is_array($professionalFields) ? $professionalFields : [];
+            return is_array($professionalFields) ? $professionalFields : [];
+        } catch (Exception $ex) {
+            $this->notice('Model: professionalFields', $ex->getMessage());
+            return null;
+        }
     }
 
     public function regions()
@@ -326,21 +346,25 @@ class NlsHunter_model
 
         $cacheKey = 'REGIONS';
         $regions = wp_cache_get($cacheKey);
+        try {
+            if (false === $regions) {
+                $regions = $this->nlsDirectory->getRegions();
+                wp_cache_set($cacheKey, $regions, 'directory', $this->nlsCacheTime);
+            }
 
-        if (false === $regions) {
-            $regions = $this->nlsDirectory->getRegions();
-            wp_cache_set($cacheKey, $regions, 'directory', $this->nlsCacheTime);
+            return is_array($regions) ? $regions : [];
+        } catch (Exception $ex) {
+            $this->notice('Model: regions', $ex->getMessage());
+            return null;
         }
-
-        return is_array($regions) ? $regions : [];
     }
 
-    public function getHotJobs($professionalFields)
+    public function getHotJobs($professionalFields = null)
     {
         $searchParams = is_array($professionalFields) ? ['' => $professionalFields] : [];
 
-        $res =  $this->getJobHunterExecuteNewQuery2($searchParams, null, 0, NlsConfig::NLS_HOT_JOBS_COUNT);
-        return $res['list'];
+        $res =  $this->getJobHunterExecuteNewQuery2($searchParams, null, 0, $this->nlsConfig->getNlsHotJobsCount());
+        return is_array($res) && key_exists('list', $res) ?  $res['list'] : [];
     }
 
     public function getJobHunterExecuteNewQuery2($searchParams = [], $hunterId = null, $page = 0, $resultRowLimit = null)
@@ -381,7 +405,7 @@ class NlsHunter_model
                     $filter
                 );
             } catch (Exception $ex) {
-                echo $ex->getMessage();
+                $this->notice('Model: getJobHunterExecuteNewQuery2', $ex->getMessage());
                 return null;
             }
         }

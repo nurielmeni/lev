@@ -16,7 +16,7 @@ function add_niloos_settings_section($wp_customize, $panel)
    * Add the Directory Service Setting
    */
   $wp_customize->add_setting('setting_' . NlsConfig::NLS_DIRECTORY_SERVICE, array(
-    'default' => 'https://hunterdirectory.hunterhrms.com/DirectoryManagementService.svc?wsdl',
+    'default' => NlsConfig::NLS_DIRECTORY_SERVICE_DEFAULT,
     'type' => 'option',
   ));
 
@@ -31,7 +31,7 @@ function add_niloos_settings_section($wp_customize, $panel)
    * Add Cards Service Setting
    */
   $wp_customize->add_setting('setting_' . NlsConfig::NLS_CARDS_SERVICE, array(
-    'default' => 'https://huntercards.hunterhrms.com/HunterCards.svc?wsdl',
+    'default' => NlsConfig::NLS_CARDS_SERVICE_DEFAULT,
     'type' => 'option',
   ));
 
@@ -46,7 +46,7 @@ function add_niloos_settings_section($wp_customize, $panel)
    * Add Directory Security Setting
    */
   $wp_customize->add_setting('setting_' . NlsConfig::NLS_SECURITY_SERVICE, array(
-    'default' => 'https://hunterdirectory.hunterhrms.com/SecurityService.svc?wsdl',
+    'default' => NlsConfig::NLS_SECURITY_SERVICE_DEFAULT,
     'type' => 'option',
   ));
 
@@ -61,7 +61,7 @@ function add_niloos_settings_section($wp_customize, $panel)
    * Add Directory Serach Setting
    */
   $wp_customize->add_setting('setting_' . NlsConfig::NLS_SEARCH_SERVICE, array(
-    'default' => 'https://huntersearchengine.hunterhrms.com/SearchEngineHunterService.svc?wsdl',
+    'default' => NlsConfig::NLS_SEARCH_SERVICE_DEFAULT,
     'type' => 'option',
   ));
 

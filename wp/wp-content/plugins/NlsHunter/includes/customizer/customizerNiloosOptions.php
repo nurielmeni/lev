@@ -16,7 +16,7 @@ function add_niloos_options_section($wp_customize, $panel)
    * Add the Jobs Count
    */
   $wp_customize->add_setting('setting_' . NlsConfig::NLS_JOBS_COUNT, array(
-    'default' => 20,
+    'default' => NlsConfig::NLS_JOBS_COUNT_DEFAULT,
     'type' => 'option',
   ));
 
@@ -31,7 +31,7 @@ function add_niloos_options_section($wp_customize, $panel)
    * Add the Hot Jobs Count
    */
   $wp_customize->add_setting('setting_' . NlsConfig::NLS_HOT_JOBS_COUNT, array(
-    'default' => 6,
+    'default' => NlsConfig::NLS_HOT_JOBS_COUNT_DEFAULT,
     'type' => 'option',
   ));
 
