@@ -8,6 +8,11 @@
     "color": {
       "palette": [
         {
+          "name": "Text",
+          "slug": "text",
+          "color": "#242424"
+        },
+        {
           "name": "Primary",
           "slug": "primary",
           "color": "#123371"
@@ -74,7 +79,7 @@
         {
           "slug": "xxxl",
           "name": "3XL",
-          "size": "1.875rem"
+          "size": "2rem"
         }
       ]
     }

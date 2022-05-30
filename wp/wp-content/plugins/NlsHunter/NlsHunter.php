@@ -29,11 +29,6 @@ if (!defined('WPINC')) {
 }
 
 /**
- *  NLS Plugin path constant
- */
-define('NLS_FBF_PLUGIN_PATH', plugin_dir_path(__FILE__));
-
-/**
  * Currently plugin version.
  * Start at version 2.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
@@ -54,6 +49,11 @@ function activate_NlsHunter()
  *  NLS Plugin path constant
  */
 define('NLS__PLUGIN_PATH', plugin_dir_path(__FILE__));
+
+/**
+ *  NLS Plugin URL constant
+ */
+define('NLS__PLUGIN_URL', plugin_dir_url(__FILE__));
 
 /**
  * The code that runs during plugin deactivation.

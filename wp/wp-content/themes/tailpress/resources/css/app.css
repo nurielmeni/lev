@@ -90,6 +90,10 @@ header .logo-wrapper {
     clip-path: polygon(0% 0, 100% 0, 100% 100%, 25% 100%);
 }
 
+.wp-block-cover.about.alignfull {
+    margin-bottom: 0 !important;
+}
+
 /* Footer */
 @media (min-width: 960px) {
     footer .area {

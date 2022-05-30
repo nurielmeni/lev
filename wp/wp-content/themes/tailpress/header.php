@@ -14,7 +14,7 @@ include_once 'includes/SocialWalker.php';
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-white text-gray-900 antialiased'); ?>>
+<body <?php body_class('bg-white text-text antialiased'); ?>>
 
 	<?php do_action('tailpress_site_before'); ?>
 

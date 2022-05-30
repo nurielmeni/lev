@@ -8,7 +8,6 @@ module.exports = {
         './**/*.php',
         '../../plugins/NlsHunter/*.php',
         '../../plugins/NlsHunter/**/*.php',
-        '../../plugins/NlsHunter/includes/class-NlsHunter-model.php',
         './resources/css/*.css',
         './resources/js/*.js',
         './resources/*.php',
