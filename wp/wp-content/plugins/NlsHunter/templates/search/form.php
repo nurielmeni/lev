@@ -11,7 +11,7 @@ $jobOptions = ['id' => 1, 'text' => 'one'];
             'class' => 'rounded-md shadow-md px-3 py-2 text-primary',
             'name' => 'category',
             'placeHolder' => __('Category', 'NlsHunter'),
-            'options' => $jobOptions,
+            'options' => $categoryOptions,
             'clearAllButton' => true, // For single select
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
@@ -22,7 +22,7 @@ $jobOptions = ['id' => 1, 'text' => 'one'];
             'class' => 'rounded-md shadow-md px-3 py-2 text-primary',
             'name' => 'scope',
             'placeHolder' => __('Scope', 'NlsHunter'),
-            'options' => $jobOptions,
+            'options' => $scopeOptions,
             'clearAllButton' => true, // For single select
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
@@ -33,7 +33,7 @@ $jobOptions = ['id' => 1, 'text' => 'one'];
             'class' => 'rounded-md shadow-md px-3 py-2 text-primary',
             'name' => 'region',
             'placeHolder' => __('Region', 'NlsHunter'),
-            'options' => $jobOptions,
+            'options' => $locationOptions,
             'clearAllButton' => true, // For single select
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
@@ -44,7 +44,7 @@ $jobOptions = ['id' => 1, 'text' => 'one'];
             'class' => 'rounded-md shadow-md border-0 px-3 py-2 text-primary',
             'name' => 'hybrid',
             'placeHolder' => __('Hybrid', 'NlsHunter'),
-            'options' => $jobOptions,
+            'options' => $hybridOptions,
             'clearAllButton' => true, // For single select
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>

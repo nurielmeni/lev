@@ -314,8 +314,10 @@ class NlsHunter_model
     public function hybrid()
     {
         return [
-            'id' => 1,
-            'text' => 'Hybrid'
+            [
+                'id' => 1,
+                'name' => 'Hybrid'
+            ]
 
         ];
     }

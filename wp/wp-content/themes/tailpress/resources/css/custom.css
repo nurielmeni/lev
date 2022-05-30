@@ -43,3 +43,7 @@ article>*:not(.entry-content),
         }
     }
 }
+
+.alignfull.mt-0 {
+    margin-top: 0 !important;
+}

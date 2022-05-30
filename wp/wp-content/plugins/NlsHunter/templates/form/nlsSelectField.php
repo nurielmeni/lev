@@ -24,7 +24,7 @@ $value = isset($value) && is_array($value) ? $value : [];
   <div class="relative flex md:justify-start items-center w-full">
     <select <?= $id ? 'for="' . $id . '"' : '' ?> name="<?= isset($name) ? $name : '' ?><?= isset($multiple) && $multiple ? '[]' : '' ?>" class="sumo <?= isset($class) ? $class : '' ?>" validator="<? isset($required) && $required ? 'required' : '' ?>" aria-invalid="false" aria-required="<?= isset($required) && $required ? 'true' : 'false' ?>" placeholder="<?= isset($placeHolder) ? $placeHolder : '' ?>" <?= isset($multiple) && $multiple ? 'multiple' : '' ?>>
       <?php foreach ($options as $option) : ?>
-        <option value="<?= $option['id'] ?>" <?= in_array($option['id'], $value) ? 'selected' : '' ?>><?= $option['value'] ?></option>
+        <option value="<?= $option['id'] ?>" <?= in_array($option['id'], $value) ? 'selected' : '' ?>><?= $option['name'] ?></option>
       <?php endforeach; ?>
     </select>
     <?php if (isset($clearAllButton) && $clearAllButton) : ?>
