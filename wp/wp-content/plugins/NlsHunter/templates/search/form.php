@@ -13,6 +13,7 @@ $jobOptions = ['id' => 1, 'text' => 'one'];
             'placeHolder' => __('Category', 'NlsHunter'),
             'options' => $categoryOptions,
             'clearAllButton' => true, // For single select
+            'multiple' => true,
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
 
@@ -24,6 +25,7 @@ $jobOptions = ['id' => 1, 'text' => 'one'];
             'placeHolder' => __('Scope', 'NlsHunter'),
             'options' => $scopeOptions,
             'clearAllButton' => true, // For single select
+            'multiple' => true,
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
 
@@ -35,6 +37,7 @@ $jobOptions = ['id' => 1, 'text' => 'one'];
             'placeHolder' => __('Region', 'NlsHunter'),
             'options' => $locationOptions,
             'clearAllButton' => true, // For single select
+            'multiple' => true,
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
 
@@ -46,6 +49,7 @@ $jobOptions = ['id' => 1, 'text' => 'one'];
             'placeHolder' => __('Hybrid', 'NlsHunter'),
             'options' => $hybridOptions,
             'clearAllButton' => true, // For single select
+            'multiple' => true,
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
 
@@ -57,5 +61,11 @@ $jobOptions = ['id' => 1, 'text' => 'one'];
             'name' => 'keyword',
             'autofocus' => false
         ]) ?>
+
+        <!-- APPLY BUTTON -->
+        <?= render('form/nlsApplyBtn', [
+            'class' => 'rounded-md shadow-md px-3 py-2  w-full bg-gradient-to-b from-btn-s via-btn-m to-btn-e text-white font-bold text-xl',
+            'text' => __('Search', 'NlsHunter')
+        ]); ?>
     </div>
 </form>

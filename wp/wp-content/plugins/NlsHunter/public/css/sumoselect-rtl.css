@@ -68,6 +68,10 @@ body
   margin-bottom: 0;
 }
 
+#content .SumoSelect > .optWrapper.multiple {
+  top: 42px;
+}
+
 #content .SumoSelect > .optWrapper.multiple > ul.options {
   margin-bottom: 0;
 }

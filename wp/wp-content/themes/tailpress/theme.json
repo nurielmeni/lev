@@ -46,6 +46,21 @@
           "name": "grad-3",
           "slug": "grad-3",
           "color": "#3D94B3"
+        },
+        {
+          "name": "btn-s",
+          "slug": "btn-s",
+          "color": "#48a7bc"
+        },
+        {
+          "name": "btn-m",
+          "slug": "btn-m",
+          "color": "#3074a7"
+        },
+        {
+          "name": "btn-e",
+          "slug": "btn-e",
+          "color": "#123371"
         }
       ]
     },
