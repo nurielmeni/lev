@@ -33,7 +33,7 @@ class NlsHunter_modules
         return ob_get_clean();
     }
 
-    public function nlsJobSearch_render()
+    public function nlsJobSearch_render($atts)
     {
         if (!$this->model) return;
 
@@ -42,12 +42,48 @@ class NlsHunter_modules
         $locationOptions = $this->model->regions();
         $hybridOptions = $this->model->hybrid();
 
+        $searchResultsUrl = $this->model->get_link_by_slug('search-results');
+        $searchParams = $this->getSearchParams(['category', 'scope', 'region', 'hybrid', 'keyword']);
+
         ob_start();
         echo render('search/searchModule', [
             'categoryOptions' => $categoryOptions,
             'scopeOptions' =>  $scopeOptions,
             'locationOptions' => $locationOptions,
-            'hybridOptions' =>  $hybridOptions
+            'hybridOptions' =>  $hybridOptions,
+            'searchResultsUrl' => $searchResultsUrl,
+            'searchParams' => $searchParams,
+            'atts' => $atts
+        ]);
+
+        return ob_get_clean();
+    }
+
+    private function getSearchParams($params)
+    {
+        $res = [];
+        if (!is_array($params)) return $res;
+
+        foreach ($params as $param) {
+            $val = $this->model->queryParam($param, false);
+            if (!$val) continue;
+            $res[$param] = $val;
+        }
+
+        return $res;
+    }
+
+    public function nlsSearchResults_render()
+    {
+        if (!$this->model) return;
+
+        $searchParams = $this->getSearchParams(['category', 'scope', 'region', 'hybrid', 'keyword']);
+        $jobs = $this->model->getJobHunterExecuteNewQuery2($searchParams);
+
+        ob_start();
+        echo render('searchResults/searchResultsModule', [
+            'searchResultsUrl' => $this->model->get_link_by_slug('search-results'),
+            'jobs' => $jobs
         ]);
 
         return ob_get_clean();
@@ -61,7 +97,9 @@ class NlsHunter_modules
 
         ob_start();
         echo render('hotJobs/hotJobsModule', [
-            'hotJobs' => $hotJobs
+            'applyUrl' => $this->model->get_link_by_slug('apply-cv'),
+            'hotJobs' => $hotJobs,
+            'searchResultsUrl' => $this->model->get_link_by_slug('search-results'),
         ]);
 
         return ob_get_clean();

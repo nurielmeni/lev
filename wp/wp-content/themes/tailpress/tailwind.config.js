@@ -23,7 +23,10 @@ module.exports = {
         },
         extend: {
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
-            fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme))
+            fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)),
+            minWidth: {
+                '280': '280px'
+            }
         },
         screens: {
             'xs': '480px',

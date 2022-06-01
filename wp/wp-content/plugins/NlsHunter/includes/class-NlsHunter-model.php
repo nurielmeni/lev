@@ -62,6 +62,15 @@ class NlsHunter_model
         }
     }
 
+    /**
+     * type: page/post
+     */
+    public function get_link_by_slug($slug, $type = 'page')
+    {
+        $post = get_page_by_path($slug, OBJECT, $type);
+        return get_permalink($post->ID);
+    }
+
     public function getDefaultLogo()
     {
         return esc_url(plugins_url('NlsHunter/public/images/employer-logo.svg'));

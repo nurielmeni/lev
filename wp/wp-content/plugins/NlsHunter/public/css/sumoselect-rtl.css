@@ -13,94 +13,92 @@ and open the template in the editor.
     padding: 2px 0 2px 4px;
 }
 */
+.search .SumoSelect {
+  width: 100%;
+}
 
-.SumoSelect.open > .optWrapper > * {
+.SumoSelect.open>.optWrapper>* {
   background: #ffffff;
 }
 
-.SumoSelect > .optWrapper.multiple > .options li.opt {
+.SumoSelect>.optWrapper.multiple>.options li.opt {
   padding-right: 35px;
   padding-left: 0;
   margin: 0;
 }
 
-.SumoSelect > .optWrapper.multiple > .options li.opt span,
-.SumoSelect .select-all > span {
+.SumoSelect>.optWrapper.multiple>.options li.opt span,
+.SumoSelect .select-all>span {
   margin-right: -35px;
   margin-left: 0;
 }
 
-.SumoSelect .select-all > label,
-.SumoSelect > .CaptionCont,
-.SumoSelect > .CaptionCont > label,
-.SumoSelect > .optWrapper > .options li.opt label {
-  font-size: 1rem;
+.SumoSelect .select-all>label,
+.SumoSelect>.CaptionCont,
+.SumoSelect>.CaptionCont>label,
+.SumoSelect>.optWrapper>.options li.opt label {
   font-weight: normal;
 }
 
-.SumoSelect > .CaptionCont > label {
+.SumoSelect>.CaptionCont>label {
   right: auto;
   left: 5px;
   margin-bottom: 0;
 }
 
-.SumoSelect > .CaptionCont > span {
+.SumoSelect>.CaptionCont>span {
   padding-right: 0;
   padding-left: 30px;
 }
 
-.SumoSelect.open > .CaptionCont,
-.SumoSelect:focus > .CaptionCont,
-.SumoSelect:hover > .CaptionCont {
+.SumoSelect.open>.CaptionCont,
+.SumoSelect:focus>.CaptionCont,
+.SumoSelect:hover>.CaptionCont {
   box-shadow: none;
 }
 
-.SumoSelect .select-all > label,
-.SumoSelect .select-all > span i {
+.SumoSelect .select-all>label,
+.SumoSelect .select-all>span i {
   line-height: 2.25rem;
 }
-body
-  #content
-  .SumoSelect
-  > .optWrapper.multiple.okCancelInMulti
-  > .MultiControls
-  > p {
+
+body #content .SumoSelect>.optWrapper.multiple.okCancelInMulti>.MultiControls>p {
   margin-bottom: 0;
 }
 
-#content .SumoSelect > .optWrapper.multiple {
+#content .SumoSelect>.optWrapper.multiple {
   top: 42px;
 }
 
-#content .SumoSelect > .optWrapper.multiple > ul.options {
+#content .SumoSelect>.optWrapper.multiple>ul.options {
   margin-bottom: 0;
 }
 
-.SumoSelect .select-all.selected > span i,
-.SumoSelect > .optWrapper.multiple > .options li.opt.selected span i {
+.SumoSelect .select-all.selected>span i,
+.SumoSelect>.optWrapper.multiple>.options li.opt.selected span i {
   background-color: #1672ba;
 }
 
-.SumoSelect > .optWrapper.multiple > .MultiControls > p.btnOk {
+.SumoSelect>.optWrapper.multiple>.MultiControls>p.btnOk {
   border-right: none;
   border-left: 1px solid #dbdbdb;
 }
 
-.SumoSelect.open > .optWrapper.isFloating {
+.SumoSelect.open>.optWrapper.isFloating {
   max-width: 500px;
   top: 0;
 }
 
-.SumoSelect > .optWrapper > .options li label {
+.SumoSelect>.optWrapper>.options li label {
   text-overflow: initial;
   white-space: normal;
 }
 
-.SumoSelect > .optWrapper > .options li.opt {
+.SumoSelect>.optWrapper>.options li.opt {
   margin-right: 0;
   padding-right: 1rem;
 }
 
-.SumoSelect > .optWrapper.multiple.isFloating {
+.SumoSelect>.optWrapper.multiple.isFloating {
   padding-bottom: 5rem;
 }

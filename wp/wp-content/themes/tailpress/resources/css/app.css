@@ -36,7 +36,7 @@ li.social {
   height: 2.125rem;
 }
 
-li.social > a {
+li.social>a {
   background-color: white;
   border-radius: 50px;
   width: 100%;
@@ -46,7 +46,7 @@ li.social > a {
   align-items: center;
 }
 
-#header-social li.social > a {
+#header-social li.social>a {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -55,13 +55,13 @@ i.btn-icon {
   background-size: contain;
 }
 
-li.social > a > i {
+li.social>a>i {
   width: 2rem;
   height: 2rem;
   display: block;
 }
 
-#header-social li.social > a > i {
+#header-social li.social>a>i {
   width: 1.375rem;
   height: 1.375rem;
 }
@@ -94,6 +94,11 @@ header .logo-wrapper {
   margin-bottom: 0 !important;
 }
 
+section.container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 /* Footer */
 @media (min-width: 960px) {
   footer .area {
@@ -108,10 +113,18 @@ header .logo-wrapper {
   }
 }
 
+@media (min-width: 600px) {
+  section.container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 @media (max-width: 959.9px) {
   header .logo-wrapper img {
     width: calc(10vw + 90px);
   }
 }
+
 
 /* Buttons */

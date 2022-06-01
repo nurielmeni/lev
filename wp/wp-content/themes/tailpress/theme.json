@@ -3,7 +3,7 @@
   "settings": {
     "layout": {
       "contentSize": "960px",
-      "wideSize": "1280px"
+      "wideSize": "1440px"
     },
     "color": {
       "palette": [
@@ -61,6 +61,26 @@
           "name": "btn-e",
           "slug": "btn-e",
           "color": "#123371"
+        },
+        {
+          "name": "header-s",
+          "slug": "header-s",
+          "color": "#1695b8"
+        },
+        {
+          "name": "header-m",
+          "slug": "header-m",
+          "color": "#343c78"
+        },
+        {
+          "name": "header-m2",
+          "slug": "header-m2",
+          "color": "#523263"
+        },
+        {
+          "name": "header-e",
+          "slug": "header-e",
+          "color": "#8e4869"
         }
       ]
     },

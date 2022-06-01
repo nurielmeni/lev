@@ -269,6 +269,7 @@ class NlsHunter
 		// Add Shortcode
 		add_shortcode('nls_application_form', [$this->modules, 'nlsApplicationForm_render']);
 		add_shortcode('nls_job_search', [$this->modules, 'nlsJobSearch_render']);
+		add_shortcode('nls_search_results', [$this->modules, 'nlsSearchResults_render']);
 		add_shortcode('nls_hot_jobs', [$this->modules, 'nlsHotJobs_render']);
 	}
 

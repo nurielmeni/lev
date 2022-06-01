@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-05-31 15:19+0300\n"
-"PO-Revision-Date: 2022-05-31 15:19+0300\n"
+"POT-Creation-Date: 2022-06-01 23:04+0300\n"
+"PO-Revision-Date: 2022-06-01 23:04+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -36,27 +36,27 @@ msgstr "אין אפשרות ליצור מודל."
 msgid "Error: NlsHunter_model: "
 msgstr "שגיאה: NlsHunterFbf_model: "
 
-#: includes/class-NlsHunter-model.php:147
+#: includes/class-NlsHunter-model.php:156
 msgid "Could not init Card Services."
 msgstr "אין אפשרות להתחבר לשירותי Card"
 
-#: includes/class-NlsHunter-model.php:148
+#: includes/class-NlsHunter-model.php:157
 msgid "Error: Card Services: "
 msgstr "שגיאה: שירותי כרטיס"
 
-#: includes/class-NlsHunter-model.php:168
+#: includes/class-NlsHunter-model.php:177
 msgid "Could not init Directory Services."
 msgstr "אין אפשרות להתחבר לשירותי Directory"
 
-#: includes/class-NlsHunter-model.php:169
+#: includes/class-NlsHunter-model.php:178
 msgid "Error: Directory Services: "
 msgstr "שגיאה: שירותי מדריך"
 
-#: includes/class-NlsHunter-model.php:189
+#: includes/class-NlsHunter-model.php:198
 msgid "Could not init Search Services."
 msgstr "אין אפשרות להתחבר לשירותי Search"
 
-#: includes/class-NlsHunter-model.php:190
+#: includes/class-NlsHunter-model.php:199
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
 
@@ -273,6 +273,18 @@ msgstr "חפש"
 msgid "Not required"
 msgstr "לא חובה"
 
+#: templates/hotJobs/hotJob.php:8
+msgid "Submit CV"
+msgstr "הגישו קורות חיים"
+
+#: templates/hotJobs/hotJobsModule.php:3
+msgid "Hot Jobs"
+msgstr "משרות חמות"
+
+#: templates/hotJobs/hotJobsModule.php:19
+msgid "All Jobs"
+msgstr "כל המשרות"
+
 #: templates/mail/mailApply.php:86
 msgid "Applied CV from Jobs Site"
 msgstr "קורות חיים נשלחו מאתר משרות"
@@ -372,9 +384,6 @@ msgstr "מני נוריאל"
 
 #~ msgid "Not Found: The requested Job Code was not found."
 #~ msgstr "לא נמצא: משרה עם קוד המשרה המבוקש, לא נמצאה."
-
-#~ msgid "All Fair Jobs"
-#~ msgstr "לכל משרות היריד"
 
 #~ msgid "Settings Niloos Services"
 #~ msgstr "הגדרת שירותי נילוס"
