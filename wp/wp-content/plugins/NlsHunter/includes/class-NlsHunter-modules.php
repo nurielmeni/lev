@@ -81,7 +81,7 @@ class NlsHunter_modules
         $jobs = $this->model->getJobHunterExecuteNewQuery2($searchParams);
 
         ob_start();
-        echo render('searchResults/searchResultsModule', [
+        echo render('jobs/searchResultsModule', [
             'searchResultsUrl' => $this->model->get_link_by_slug('search-results'),
             'jobs' => $jobs
         ]);
