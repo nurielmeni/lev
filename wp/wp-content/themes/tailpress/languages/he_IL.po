@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TailPress\n"
-"POT-Creation-Date: 2022-05-17 23:27+0300\n"
-"PO-Revision-Date: 2022-05-17 23:29+0300\n"
+"POT-Creation-Date: 2022-06-02 22:13+0300\n"
+"PO-Revision-Date: 2022-06-02 22:13+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -97,15 +97,15 @@ msgstr "תפריט פוטר"
 msgid "Footer Social Menu"
 msgstr "תפריט רשתות חברתיות פוטר"
 
-#: template-parts/content-single.php:14 template-parts/content.php:28
+#: template-parts/content-single.php:9 template-parts/content.php:23
 msgid "Pages:"
 msgstr "דפים:"
 
-#: template-parts/content-single.php:18 template-parts/content.php:32
+#: template-parts/content-single.php:13 template-parts/content.php:27
 msgid "Page"
 msgstr "דף"
 
-#: template-parts/content.php:21
+#: template-parts/content.php:16
 #, php-format
 msgid "Continue reading %s"
 msgstr "המשך לקרוא %s"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-06-01 23:04+0300\n"
-"PO-Revision-Date: 2022-06-01 23:04+0300\n"
+"POT-Creation-Date: 2022-06-04 15:41+0300\n"
+"PO-Revision-Date: 2022-06-04 15:41+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -273,7 +273,7 @@ msgstr "חפש"
 msgid "Not required"
 msgstr "לא חובה"
 
-#: templates/hotJobs/hotJob.php:8
+#: templates/hotJobs/hotJob.php:8 templates/jobs/job.php:28
 msgid "Submit CV"
 msgstr "הגישו קורות חיים"
 
@@ -284,6 +284,34 @@ msgstr "משרות חמות"
 #: templates/hotJobs/hotJobsModule.php:19
 msgid "All Jobs"
 msgstr "כל המשרות"
+
+#: templates/jobs/job.php:8
+msgid "Job Type"
+msgstr "סוג משרה"
+
+#: templates/jobs/job.php:10
+msgid "Job Category"
+msgstr "תחום"
+
+#: templates/jobs/job.php:12
+msgid "Job Location"
+msgstr "מיקום"
+
+#: templates/jobs/job.php:18
+msgid "Job Description"
+msgstr "תיאור המשרה"
+
+#: templates/jobs/job.php:20
+msgid "Share Job"
+msgstr "שיתוף משרה"
+
+#: templates/jobs/searchResultsModule.php:3
+msgid "Search Results"
+msgstr "תוצאות חיפוש"
+
+#: templates/jobs/searchResultsModule.php:11
+msgid "No jobs were found"
+msgstr "לא נמצאו משרות המתאימות למאפייני החיפוש"
 
 #: templates/mail/mailApply.php:86
 msgid "Applied CV from Jobs Site"
@@ -313,31 +341,27 @@ msgstr "הפרטים נקלטו בהצלחה"
 msgid "Back"
 msgstr "חזור"
 
-#: templates/search/form.php:5
-msgid "serach your next job"
-msgstr "לחיפוש התפקיד הבא שלך"
-
 #: templates/search/form.php:13
 msgid "Category"
 msgstr "תחום"
 
-#: templates/search/form.php:25
+#: templates/search/form.php:26
 msgid "Scope"
 msgstr "היקף משרה"
 
-#: templates/search/form.php:37
+#: templates/search/form.php:39
 msgid "Region"
 msgstr "מיקום"
 
-#: templates/search/form.php:49
+#: templates/search/form.php:52
 msgid "Hybrid"
 msgstr "היברידי"
 
-#: templates/search/form.php:60
+#: templates/search/form.php:64
 msgid "Search by keyword"
 msgstr "חיפוש לפי מילת חיפוש"
 
-#: templates/search/form.php:68
+#: templates/search/form.php:73
 msgid "Search"
 msgstr "חפש"
 
@@ -355,11 +379,11 @@ msgstr ".‫API fot Niloosoft HunterHRMS System"
 msgid "Meni Nurie"
 msgstr "מני נוריאל"
 
+#~ msgid "serach your next job"
+#~ msgstr "לחיפוש התפקיד הבא שלך"
+
 #~ msgid "You do not have sufficient permissions to access this page."
 #~ msgstr "אין לך הרשאות מספיקות כדי לגשת לעמוד זה."
-
-#~ msgid "Job Code"
-#~ msgstr "קוד משרה"
 
 #~ msgid "Email"
 #~ msgstr "מייל חברה"
@@ -459,14 +483,8 @@ msgstr "מני נוריאל"
 #~ msgid "Jobs"
 #~ msgstr "משרות"
 
-#~ msgid "More Results"
-#~ msgstr "תוצאות נוספות"
-
 #~ msgid "Job Area"
 #~ msgstr "תחום לימוד"
-
-#~ msgid "Job Rank"
-#~ msgstr "קהל יעד"
 
 #~ msgid "Last Date"
 #~ msgstr "עדכון אחרון"
