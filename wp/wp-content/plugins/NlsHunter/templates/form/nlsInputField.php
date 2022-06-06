@@ -15,11 +15,11 @@
  */
 $id = isset($name) ? str_replace('[]', '', $name) . '--0' : false;
 $value = isset($value) ? $value : '';
-$required =  isset($validators) && is_array($validators) && in_array('required', $validators) !== false;
+$required =  isset($validators) && is_array($validators) && in_array('required', $validators);
 ?>
 <div class="nls-field input <?= isset($wrapperClass) ? $wrapperClass : '' ?>">
   <?php if (isset($label)) : ?>
-    <label <?= $id ? 'for="' . $id . '"' : '' ?> class="w-100 flex justify-between"><?= $label ?><span><? $required ? __('Not required', 'NlsHunter') : '' ?></span></label>
+    <label <?= $id ? 'for="' . $id . '"' : '' ?> class="w-100 flex justify-between"><?= $label ?><span><?= !$required ? __('Not required', 'NlsHunter') : '' ?></span></label>
   <?php endif; ?>
   <div class="relative">
     <?= isset($prepend) ? '<img src="' . $prepend . '" width="' . (isset($iconSize) ? $iconSize : 24) . '" height="' . (isset($iconSize) ? $iconSize : 24) . '" class="prepend inset-center" aria-hidden="true" focusable="false" />' : '' ?>
