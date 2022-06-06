@@ -16,10 +16,7 @@
   <div class="px-4 pt-4">
     <div class="flex justify-between">
       <h3 class="font-bold mb-3"><?= __('Job Description', 'NlsHunter') ?></h3>
-      <button class="share-trigger" aria-labelledby="share-label">
-        <span id="share-label" hidden><?= __('Share Job', 'NlsHunter') ?></span>
-        <img src="<?= NLS__PLUGIN_URL . 'public/images/share.svg' ?>" alt="" aria-hidden="true" focusable="false" width="32">
-      </button>
+      <?= render('jobs/jobShare', []) ?>
     </div>
     <article>
       <?= html_entity_decode($job->Description, ENT_QUOTES) ?>

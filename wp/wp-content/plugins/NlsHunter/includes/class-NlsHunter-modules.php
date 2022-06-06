@@ -1,6 +1,6 @@
 <?php
 require_once 'Hunter/NlsHelper.php';
-require_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
+require_once NLS__PLUGIN_PATH . '/renderFunction.php';
 
 /**
  * Description of class-NlsHunter-modules
