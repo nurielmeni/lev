@@ -30,7 +30,12 @@
         {
           "name": "Light",
           "slug": "light",
-          "color": "#F9FAFB"
+          "color": "#fcfcfc"
+        },
+        {
+          "name": "BG Gray",
+          "slug": "bg-gray",
+          "color": "#e2e2e2"
         },
         {
           "name": "grad-1",
@@ -81,6 +86,21 @@
           "name": "header-e",
           "slug": "header-e",
           "color": "#8e4869"
+        },
+        {
+          "name": "apply-s",
+          "slug": "apply-s",
+          "color": "#48a7bc"
+        },
+        {
+          "name": "apply-m",
+          "slug": "apply-m",
+          "color": "#3074a7"
+        },
+        {
+          "name": "apply-e",
+          "slug": "apply-e",
+          "color": "#2e3572"
         }
       ]
     },

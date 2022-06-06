@@ -68,6 +68,8 @@ class NlsHunter_model
     public function get_link_by_slug($slug, $type = 'page')
     {
         $post = get_page_by_path($slug, OBJECT, $type);
+        if (!$post) return '/';
+
         return get_permalink($post->ID);
     }
 

@@ -90,6 +90,21 @@ class NlsHunter_modules
         return ob_get_clean();
     }
 
+    public function nlsApplyCv_render()
+    {
+        if (!$this->model) return;
+
+        $jobCode = $this->model->queryParam('job-code', false);
+
+        ob_start();
+        echo render('apply/applyModule', [
+            'applyResultUrl' => $this->model->get_link_by_slug('apply-result'),
+            'jobCode' => $jobCode
+        ]);
+
+        return ob_get_clean();
+    }
+
     public function nlsHotJobs_render()
     {
         if (!$this->model) return;

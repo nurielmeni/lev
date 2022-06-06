@@ -25,7 +25,7 @@ module.exports = {
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
             fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)),
             minWidth: {
-                '280': '280px'
+                '280': '280px',
             }
         },
         screens: {
