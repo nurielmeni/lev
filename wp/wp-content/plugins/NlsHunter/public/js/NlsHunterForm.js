@@ -94,9 +94,9 @@ var nls =
       var valid = true;
 
       $(form)
-        .find("input")
+        .find("input, select")
         .each(function (i, el) {
-          if ($(el).parents(".nls-field").css("display") === "none")
+          if ($(el).parents(".nls-field").css("display") === "none" || $(el).attr('type') === 'hidden')
             return;
           if (typeof $(el).attr("validator") === "undefined") return;
           if (!fieldValidate(el)) valid = false;
@@ -216,7 +216,6 @@ var nls =
           "opera mini",
           "mobi",
         ],
-        placeholder: "בחירה",
         locale: ["אישור", "ביטול", "בחר הכל"],
         okCancelInMulti: false,
         isClickAwayOk: true,
@@ -231,6 +230,7 @@ var nls =
           var applyCvButton = event.target;
           var form = $(applyCvButton).parents("form.nls-apply-for-jobs");
           var formData = new FormData(form[0]);
+
 
           if (!validateSubmit(form, formData)) {
             event.preventDefault();
@@ -315,38 +315,6 @@ var nls =
       });
 
       $('.nls-field.file input[type="file"]').on('change', updateFileName);
-
-      // Create an empty element
-      emptyFriendDetails = $(
-        ".nls-apply-for-jobs .friends-details .form-body"
-      ).html();
-
-      //Add new friend hendler
-      $(document).on("click", "button.another-friend",
-        function () {
-          var needle = /--0/g;
-          var re = "--" + nextFriendContainerId;
-
-          $(emptyFriendDetails.replace(needle, re))
-            .hide()
-            .appendTo(".nls-apply-for-jobs .friends-details .form-body")
-            .show("slow");
-
-          nextFriendContainerId++;
-        }
-      );
-
-      // Remove friend
-      $(document).on(
-        "click",
-        ".nls-apply-for-jobs .friends-details .form-body .friend span.remove",
-        function () {
-          var target = $(this).parent();
-          $(target).hide("slow", function () {
-            $(target).remove();
-          });
-        }
-      );
 
       // Make sure to initilize the radio display options
       $('input[type="radio"]').trigger("change");

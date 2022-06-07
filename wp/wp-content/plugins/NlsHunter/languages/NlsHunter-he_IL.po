@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-06-04 15:41+0300\n"
-"PO-Revision-Date: 2022-06-04 15:41+0300\n"
+"POT-Creation-Date: 2022-06-08 00:13+0300\n"
+"PO-Revision-Date: 2022-06-08 00:15+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -36,29 +36,49 @@ msgstr "אין אפשרות ליצור מודל."
 msgid "Error: NlsHunter_model: "
 msgstr "שגיאה: NlsHunterFbf_model: "
 
-#: includes/class-NlsHunter-model.php:156
+#: includes/class-NlsHunter-model.php:158
 msgid "Could not init Card Services."
 msgstr "אין אפשרות להתחבר לשירותי Card"
 
-#: includes/class-NlsHunter-model.php:157
+#: includes/class-NlsHunter-model.php:159
 msgid "Error: Card Services: "
 msgstr "שגיאה: שירותי כרטיס"
 
-#: includes/class-NlsHunter-model.php:177
+#: includes/class-NlsHunter-model.php:179
 msgid "Could not init Directory Services."
 msgstr "אין אפשרות להתחבר לשירותי Directory"
 
-#: includes/class-NlsHunter-model.php:178
+#: includes/class-NlsHunter-model.php:180
 msgid "Error: Directory Services: "
 msgstr "שגיאה: שירותי מדריך"
 
-#: includes/class-NlsHunter-model.php:198
+#: includes/class-NlsHunter-model.php:200
 msgid "Could not init Search Services."
 msgstr "אין אפשרות להתחבר לשירותי Search"
 
-#: includes/class-NlsHunter-model.php:199
+#: includes/class-NlsHunter-model.php:201
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
+
+#: includes/class-NlsHunter-model.php:340
+msgid "First Year"
+msgstr "שנה א"
+
+#: includes/class-NlsHunter-model.php:341
+msgid "Second Year"
+msgstr "שנה ב"
+
+#: includes/class-NlsHunter-model.php:342
+msgid "Third Year"
+msgstr "שנה ג"
+
+#: includes/class-NlsHunter-model.php:343
+msgid "Forth Year"
+msgstr "שנה ד"
+
+#: includes/class-NlsHunter-model.php:344
+msgid "Graduate Year"
+msgstr "בוגר/ת"
 
 #: includes/customizer/customizerAdjustments.php:22
 msgid "Niloos"
@@ -221,6 +241,40 @@ msgstr "פרטי החבר:"
 msgid "CV Applied from Mega Sport Jobs Site"
 msgstr "קורות חיים נשלחו מאתר יריד משרות רייכמן"
 
+#: templates/apply/applyModule.php:4 templates/hotJobs/hotJob.php:8
+#: templates/jobs/job.php:28
+msgid "Submit CV"
+msgstr "הגישו קורות חיים"
+
+#: templates/apply/applyModule.php:14
+msgid "Only lev students and graduates can apply"
+msgstr ""
+"הגשת מועמדות למי שאינו סטודנט/ית או בוגר/ת המרכז האקדמי לב, לא תתאפשר."
+
+#: templates/apply/applyModule.php:20 templates/form/nlsApplyBtn.php:12
+msgid "Submit"
+msgstr "חפש"
+
+#: templates/apply/form.php:8 templates/applyForJobs.php:76
+msgid "Full Name"
+msgstr "שם מלא"
+
+#: templates/apply/form.php:18
+msgid "Id Number"
+msgstr "ת.ז"
+
+#: templates/apply/form.php:28
+msgid "Email"
+msgstr "אימייל"
+
+#: templates/apply/form.php:38
+msgid "Linkedin Profile"
+msgstr "פרופיל לינקדאין"
+
+#: templates/apply/form.php:49
+msgid "Study Year"
+msgstr "שנת לימודים"
+
 #: templates/applyForJobs.php:6
 msgid "My friend details:"
 msgstr "פרטי החבר:"
@@ -249,10 +303,6 @@ msgstr "עוד חבר"
 msgid "My details:"
 msgstr "הפרטים שלי:"
 
-#: templates/applyForJobs.php:76
-msgid "Full Name"
-msgstr "שם מלא"
-
 #: templates/applyForJobs.php:86
 msgid "Cell Phone"
 msgstr "מס׳ נייד"
@@ -265,17 +315,9 @@ msgstr "מס׳ ת״ז"
 msgid "Send"
 msgstr "שלח"
 
-#: templates/form/nlsApplyBtn.php:12
-msgid "Submit"
-msgstr "חפש"
-
 #: templates/form/nlsInputField.php:22 templates/form/nlsSelectField.php:22
 msgid "Not required"
 msgstr "לא חובה"
-
-#: templates/hotJobs/hotJob.php:8 templates/jobs/job.php:28
-msgid "Submit CV"
-msgstr "הגישו קורות חיים"
 
 #: templates/hotJobs/hotJobsModule.php:3
 msgid "Hot Jobs"
@@ -301,7 +343,8 @@ msgstr "מיקום"
 msgid "Job Description"
 msgstr "תיאור המשרה"
 
-#: templates/jobs/job.php:20
+#: templates/jobs/jobShare.php:4 templates/jobs/jobShare.php:8
+#: templates/jobs/jobShare.php:12 templates/jobs/jobShare.php:16
 msgid "Share Job"
 msgstr "שיתוף משרה"
 
@@ -309,7 +352,7 @@ msgstr "שיתוף משרה"
 msgid "Search Results"
 msgstr "תוצאות חיפוש"
 
-#: templates/jobs/searchResultsModule.php:11
+#: templates/jobs/searchResultsModule.php:12
 msgid "No jobs were found"
 msgstr "לא נמצאו משרות המתאימות למאפייני החיפוש"
 
@@ -384,9 +427,6 @@ msgstr "מני נוריאל"
 
 #~ msgid "You do not have sufficient permissions to access this page."
 #~ msgstr "אין לך הרשאות מספיקות כדי לגשת לעמוד זה."
-
-#~ msgid "Email"
-#~ msgstr "מייל חברה"
 
 #~ msgid "Submit Application"
 #~ msgstr "הגשת מועמדות"

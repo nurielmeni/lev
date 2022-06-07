@@ -333,6 +333,17 @@ class NlsHunter_model
         ];
     }
 
+    public function studyYearOptions()
+    {
+        return [
+            ['id' => __('First Year', 'NlsHunter'), 'name' => __('First Year', 'NlsHunter')],
+            ['id' => __('Second Year', 'NlsHunter'), 'name' => __('Second Year', 'NlsHunter')],
+            ['id' => __('Third Year', 'NlsHunter'), 'name' => __('Third Year', 'NlsHunter')],
+            ['id' => __('Forth Year', 'NlsHunter'), 'name' => __('Forth Year', 'NlsHunter')],
+            ['id' => __('Graduate Year', 'NlsHunter'), 'name' => __('Graduate Year', 'NlsHunter')]
+        ];
+    }
+
     public function professionalFields()
     {
         $this->initDirectoryService();

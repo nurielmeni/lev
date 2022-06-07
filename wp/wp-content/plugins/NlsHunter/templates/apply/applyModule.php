@@ -3,21 +3,23 @@
         <header class="w-full py-4 px-4 bg-gradient-to-r from-apply-s via-apply-m to-apply-e">
             <h2 class="text-white text-2xl font-bold"><?= __('Submit CV', 'NlsHunter') ?></h2>
         </header>
+        <form action="" class="nls-apply-for-jobs p-6 md:p-20 bg-gray">
+            <?= render('apply/form', [
+                'jobCode' => $jobCode,
+                'studyYearOptions' => $studyYearOptions
+            ]) ?>
 
-        <?= render('apply/form', [
-            'jobCode' => $jobCode
-        ]) ?>
+            <footer class="text-center pb-6 md:pb-12">
+                <p class="font-bold text-md md:text-lg">
+                    <?= __('Only lev students and graduates can apply', 'NlsHunter') ?>
+                </p>
 
-        <footer class="text-center pb-6 md:pb-12">
-            <p class="font-bold text-md md:text-lg">
-                <?= __('Only lev students and graduates can apply', 'NlsHunter') ?>
-            </p>
-
-            <!-- APPLY BUTTON -->
-            <?= render('form/nlsApplyBtn', [
-                'class' => 'font-bold rounded-md bg-btn-m py-2 px-10 text-white m-auto md:text-2xl',
-                'text' => __('Submit', 'NlsHunter')
-            ]); ?>
-        </footer>
+                <!-- APPLY BUTTON -->
+                <?= render('form/nlsApplyBtn', [
+                    'class' => 'apply-job font-bold rounded-md bg-btn-m py-2 px-10 text-white m-auto md:text-2xl',
+                    'text' => __('Submit', 'NlsHunter')
+                ]); ?>
+            </footer>
+        </form>
     </section>
 </div>

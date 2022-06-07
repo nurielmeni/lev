@@ -95,11 +95,14 @@ class NlsHunter_modules
         if (!$this->model) return;
 
         $jobCode = $this->model->queryParam('job-code', false);
+        $studyYearOptions = $this->model->studyYearOptions();
+
 
         ob_start();
         echo render('apply/applyModule', [
             'applyResultUrl' => $this->model->get_link_by_slug('apply-result'),
-            'jobCode' => $jobCode
+            'jobCode' => $jobCode,
+            'studyYearOptions' => $studyYearOptions
         ]);
 
         return ob_get_clean();

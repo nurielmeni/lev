@@ -66,8 +66,13 @@ body #content .SumoSelect>.optWrapper.multiple.okCancelInMulti>.MultiControls>p 
   margin-bottom: 0;
 }
 
+#content .SumoSelect>.optWrapper {
+  top: 44px;
+
+}
+
 #content .SumoSelect>.optWrapper.multiple {
-  top: 42px;
+  top: 50px;
 }
 
 #content .SumoSelect>.optWrapper.multiple>ul.options {
