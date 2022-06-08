@@ -52,3 +52,19 @@
     'required' => true,
     'multiple' => false,
 ]) ?>
+
+<!--  CV FILE -->
+<?= render('form/nlsFileField', [
+    'wrapperClass' => 'w-full mb-4 text-xl',
+    'label' => __('Upload CV', 'NlsHunter'),
+    'name' => 'cv-file',
+    'buttonText' => __('Select File', 'NlsHunter'),
+    'accept' => '.txt, .pdf, .doc, .docx, .rtf',
+    'buttonClass' => 'pl-3 py-2 w-32 bg-btn-file rounded-l-md text-white text-base shadow-md drop-shadow-md',
+    'textClass' => 'w-full p-1.5 rounded-r-md shadow-md drop-shadow-md',
+    'pickerClass' => '',
+    'mode' => 'button',
+    'iconSrc' => plugins_url('NlsHunter/public/images/checkmark.png'),
+    'iconClass' => 'h-6 hidden',
+    'validators' => []
+]) ?>

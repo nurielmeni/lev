@@ -38,6 +38,11 @@
           "color": "#e2e2e2"
         },
         {
+          "name": "File Button",
+          "slug": "btn-file",
+          "color": "#707070"
+        },
+        {
           "name": "grad-1",
           "slug": "grad-1",
           "color": "#3E276D"

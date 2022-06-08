@@ -16,8 +16,8 @@
 
                 <!-- APPLY BUTTON -->
                 <?= render('form/nlsApplyBtn', [
-                    'class' => 'apply-job font-bold rounded-md bg-btn-m py-2 px-10 text-white m-auto md:text-2xl',
-                    'text' => __('Submit', 'NlsHunter')
+                    'class' => 'apply-job font-bold rounded-md bg-btn-m py-4 px-14 text-white m-auto md:text-2xl',
+                    'text' => __('Send', 'NlsHunter')
                 ]); ?>
             </footer>
         </form>

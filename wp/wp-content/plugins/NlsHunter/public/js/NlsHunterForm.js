@@ -3,10 +3,6 @@ var nls =
   (function ($) {
     "use strict";
 
-    var nextFriendContainerId = 1;
-    var emptyFriendDetails = '';
-    var fileSelectEl = 'form.nls-apply-for-jobs .nls-field input[name="cv-file"]';
-
     var Validators = {
       ISRID: {
         fn: function (value) {
@@ -180,8 +176,9 @@ var nls =
       $(".nls-apply-for-jobs").hide();
     };
 
-    var updateFileName = function () {
-      var filename = $(fileSelectEl).length && $(fileSelectEl).val().split('\\').pop();
+    var updateFileName = function (event) {
+      if (!event) return;
+      var filename = $(event.target).length && $(event.target).val().split('\\').pop();
       $('.nls-field.file .file-picker input[name="file-name"]').val(filename);
     };
 
@@ -314,7 +311,7 @@ var nls =
         $(this).parents('.nls-field.file').find('input[type="file"]').trigger('click');
       });
 
-      $('.nls-field.file input[type="file"]').on('change', updateFileName);
+      $('.nls-field.file input[type="file"]').on('change', updateFileName.bind(this));
 
       // Make sure to initilize the radio display options
       $('input[type="radio"]').trigger("change");
