@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-06-08 13:13+0300\n"
-"PO-Revision-Date: 2022-06-08 13:14+0300\n"
+"POT-Creation-Date: 2022-06-09 13:32+0300\n"
+"PO-Revision-Date: 2022-06-09 13:33+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/Hunter/NlsHelper.php:100 templates/apply/form.php:49
+#: includes/Hunter/NlsHelper.php:100 templates/apply/form.php:53
 #: templates/applyForJobs.php:39
 msgid "Select"
 msgstr "בחר"
@@ -259,29 +259,37 @@ msgstr "שלח"
 msgid "Full Name"
 msgstr "שם מלא"
 
-#: templates/apply/form.php:17
+#: templates/apply/form.php:18
 msgid "Id Number"
 msgstr "ת.ז"
 
-#: templates/apply/form.php:27
+#: templates/apply/form.php:29
 msgid "Email"
 msgstr "אימייל"
 
-#: templates/apply/form.php:37
+#: templates/apply/form.php:40
 msgid "Linkedin Profile"
 msgstr "פרופיל לינקדאין"
 
-#: templates/apply/form.php:48
+#: templates/apply/form.php:52
 msgid "Study Year"
 msgstr "שנת לימודים"
 
-#: templates/apply/form.php:59 templates/applyForJobs.php:48
+#: templates/apply/form.php:63 templates/applyForJobs.php:48
 msgid "Upload CV"
 msgstr "העלאת קובץ קו”ח"
 
-#: templates/apply/form.php:61
+#: templates/apply/form.php:66 templates/apply/form.php:83
 msgid "Select File"
 msgstr "בחר קובץ"
+
+#: templates/apply/form.php:80
+msgid "Another Document (Score sheet/Certificate)"
+msgstr "מסמך נוסף (גיליון ציונים/תעודה)"
+
+#: templates/apply/form.php:97
+msgid "I approve the terms of use and policy."
+msgstr "אני מאשר/ת את תנאי השימוש באתר ומדיניות הפרטיות."
 
 #: templates/applyForJobs.php:6
 msgid "My friend details:"
@@ -319,7 +327,7 @@ msgstr "מס׳ ת״ז"
 msgid "Submit"
 msgstr "חפש"
 
-#: templates/form/nlsInputField.php:22 templates/form/nlsSelectField.php:22
+#: templates/form/nlsInputField.php:23 templates/form/nlsSelectField.php:22
 msgid "Not required"
 msgstr "(לא חובה)"
 

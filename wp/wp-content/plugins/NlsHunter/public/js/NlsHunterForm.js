@@ -83,6 +83,20 @@ var nls =
         },
         msg: "יש לבחור אחת מהאפשרויות",
       },
+
+      checked: {
+        fn: function (el) {
+          return $(el).prop('checked');
+        },
+        msg: "יש לסמן שדה זה",
+      },
+
+      unchecked: {
+        fn: function (el) {
+          return !$(el).prop('checked');
+        },
+        msg: "שדה זה צריך להיות לא מסומן",
+      }
     };
 
     var validateSubmit = function (form, formData) {
@@ -120,7 +134,8 @@ var nls =
       var validatorAttr = $(el).attr("validator");
       var validators = validatorAttr.trim().split(" ");
       var type = $(el).attr("type");
-      var value = type === "radio" ? el : $(el).val();
+      var elementTypes = ['radio', 'checkbox'];
+      var value = elementTypes.indexOf(type) !== -1 ? el : $(el).val();
 
       validators.forEach(function (validator) {
         if (!validator || validator.length === 0) return;
@@ -179,7 +194,7 @@ var nls =
     var updateFileName = function (event) {
       if (!event) return;
       var filename = $(event.target).length && $(event.target).val().split('\\').pop();
-      $('.nls-field.file .file-picker input[name="file-name"]').val(filename);
+      $(event.target).parent().find('.file-picker input[type="text"]').val(filename);
     };
 
     $(document).ready(function () {
@@ -276,15 +291,6 @@ var nls =
           event.preventDefault();
         }
       );
-
-      // Add file indication when selected
-      $(document).on("change", '.nls-apply-for-jobs input[type="file"]', function (e) {
-        if ($(this).val().length > 0) {
-          $(this).parent().find('img.select-indication').removeClass('hidden');
-        } else {
-          $(this).parent().find('img.select-indication').addClass('hidden');
-        }
-      });
 
       // Clear validation errors on focus
       $(document).on("focus", "input", function () {

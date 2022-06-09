@@ -3,14 +3,14 @@
         <header class="w-full py-4 px-4 bg-gradient-to-r from-apply-s via-apply-m to-apply-e">
             <h2 class="text-white text-2xl font-bold"><?= __('Submit CV', 'NlsHunter') ?></h2>
         </header>
-        <form action="" class="nls-apply-for-jobs p-6 md:p-20 bg-gray">
+        <form action="" class="nls-apply-for-jobs p-6 md:p-20 bg-gray text-xl">
             <?= render('apply/form', [
                 'jobCode' => $jobCode,
                 'studyYearOptions' => $studyYearOptions
             ]) ?>
 
             <footer class="text-center pb-6 md:pb-12">
-                <p class="font-bold text-md md:text-lg">
+                <p class="font-bold text-md md:text-md md:text-right py-3">
                     <?= __('Only lev students and graduates can apply', 'NlsHunter') ?>
                 </p>
 
