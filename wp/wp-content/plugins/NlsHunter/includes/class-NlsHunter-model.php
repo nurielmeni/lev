@@ -391,14 +391,21 @@ class NlsHunter_model
         return is_array($res) && key_exists('list', $res) ?  $res['list'] : [];
     }
 
+    private function joinVals($param)
+    {
+        if (!$param || !is_array($param)) return '';
+        return implode('_', $param);
+    }
+
     public function getJobHunterExecuteNewQuery2($searchParams = [], $hunterId = null, $page = 0, $resultRowLimit = null)
     {
         $resultRowLimit = $resultRowLimit ? $resultRowLimit : $this->nlsConfig->getNlsJobsCount();
-        $resultRowOffset = is_int($page) ? $page * $resultRowLimit : 0;
-        $region = key_exists('Region', $searchParams) ? $searchParams['Region'] : 0;
-        $employer = key_exists('EmployerId', $searchParams) ? $searchParams['EmployerId'] : 0;
+        $resultRowOffset = is_int($page) ? $page * $resultRowLimit : false;
+        $category = key_exists('category', $searchParams) ? $searchParams['category'] : false;
+        $scope = key_exists('scope', $searchParams) ? $searchParams['scope'] : false;
+        $region = key_exists('region', $searchParams) ? $searchParams['region'] : false;
 
-        $cache_key = 'nls_hunter_jobs_' . $region . '_' . $employer . '_' . $resultRowOffset . '_' . $resultRowLimit;
+        $cache_key = 'nls_hunter_jobs_' . $this->joinVals($category) . '_' . $this->joinVals($scope) . '_' . $this->joinVals($region) . '_' . $resultRowOffset . '_' . $resultRowLimit;
         if ($this->nlsFlashCache) wp_cache_delete($cache_key);
 
         $jobs = wp_cache_get($cache_key);
@@ -411,14 +418,21 @@ class NlsHunter_model
 
             $filter->addSuplierIdFilter($this->nlsGetSupplierId());
 
-            if ($region !== 0) {
-                $filterField = new FilterField('RegionId', SearchPhrase::EXACT, $region, NlsFilter::NUMERIC_VALUES);
-                $filter->addWhereFilter($filterField, WhereCondition::C_AND);
+            if ($category) {
+                $filterField = new FilterField('JobProfessionalFields', SearchPhrase::EXACT, $category, NlsFilter::NESTED);
+                $nestedFilterField = new FilterField('JobProfessionalFieldInfo_CategoryId', SearchPhrase::ALL, $category, NlsFilter::NUMERIC_VALUES);
+                $filterField->setNested($nestedFilterField);
+                $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
             }
 
-            if ($employer !== 0) {
-                $filterField = new FilterField('EmployerId', SearchPhrase::EXACT, $employer, NlsFilter::TERMS_NON_ANALAYZED);
-                $filter->addWhereFilter($filterField, WhereCondition::C_AND);
+            if ($scope) {
+                $filterField = new FilterField('JobScope', SearchPhrase::EXACT, $scope, NlsFilter::NUMERIC_VALUES);
+                $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
+            }
+
+            if ($region) {
+                $filterField = new FilterField('RegionId', SearchPhrase::EXACT, $region, NlsFilter::NUMERIC_VALUES);
+                $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
             }
 
             try {

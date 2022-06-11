@@ -27,7 +27,7 @@ class FilterField
     $this->SearchPhrase = $searchPhrase;
     $this->IncludeEmptyValues = false;
     $this->FieldFilterType = $fieldType;
-    $this->Value = $value;
+    $this->Value = is_array($value) ? implode(',', $value) : $value;
     $this->Field = $field;
   }
 
@@ -113,9 +113,5 @@ class NlsFilter
   {
     $whereFilter = new WhereFilter($filters, $condition);
     $this->WhereFilters[] = $whereFilter;
-  }
-
-  private function filterWhere()
-  {
   }
 }

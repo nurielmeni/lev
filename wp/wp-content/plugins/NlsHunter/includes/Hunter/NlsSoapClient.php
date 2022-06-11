@@ -8,10 +8,10 @@
  */
 class NlsSoapClient extends SoapClient
 {
-    function __doRequest($request, $location, $action, $version, $one_way = NULL) 
+    function __doRequest($request, $location, $action, $version, $one_way = NULL)
     {
         set_exception_handler([$this, 'handleException']);
-        if (strpos($location, 'SecurityService')) { 
+        if (strpos($location, 'SecurityService')) {
             $namespace = "http://NilooSoft.com";
 
             $request = preg_replace('/<ns1:(\w+)/', '<$1 xmlns="' . $namespace . '"', $request, 1);
@@ -24,7 +24,7 @@ class NlsSoapClient extends SoapClient
     public function handleException($e)
     {
         if (strpos($e->getMessage(), 'Security Service Evaluate Failed') !== false) {
-            header('Location: ' . esc_url( home_url( '/' ) ));
+            header('Location: ' . esc_url(home_url('/')));
             die();
         }
         restore_exception_handler();

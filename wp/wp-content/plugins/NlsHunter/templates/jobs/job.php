@@ -5,12 +5,18 @@
       <?= $job->JobCode ?>
     </div>
     <dl class="flex gap-2">
-      <dt><strong><?= __('Job Type', 'NlsHunter') ?>:</strong></dt>
-      <dd class="ml-2"><?= $job->EmploymentType ?></dd>
-      <dt><strong><?= __('Job Category', 'NlsHunter') ?>:</strong></dt>
-      <dd class="ml-2"><?= 'תחום' ?></dd>
-      <dt><strong><?= __('Job Location', 'NlsHunter') ?>:</strong></dt>
-      <dd class="ml-2"><?= $job->RegionId ?></dd>
+      <?php if ($job->EmploymentType) : ?>
+        <dt><strong><?= __('Job Type', 'NlsHunter') ?>:</strong></dt>
+        <dd class="ml-2"><?= $job->EmploymentType ?></dd>
+      <?php endif; ?>
+      <?php if (property_exists($job->JobProfessionalFields, 'JobProfessionalFieldInfo')) : ?>
+        <dt><strong><?= __('Job Category', 'NlsHunter') ?>:</strong></dt>
+        <dd class="ml-2"><?= $job->JobProfessionalFields->JobProfessionalFieldInfo ?></dd>
+      <?php endif; ?>
+      <?php if ($job->RegionId) : ?>
+        <dt><strong><?= __('Job Location', 'NlsHunter') ?>:</strong></dt>
+        <dd class="ml-2"><?= $job->RegionId ?></dd>
+      <?php endif; ?>
     </dl>
   </header>
   <div class="px-4 pt-4">
