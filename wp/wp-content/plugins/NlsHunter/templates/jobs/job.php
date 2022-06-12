@@ -1,21 +1,21 @@
 <article class="w-full job-wrapper drop-shadow-md bg-white my-4 rounded-b-md">
   <header class=" bg-[#eee] bg-opacity-90 p-4">
-    <div class="flex justify-between">
-      <h3 class="text-xl md:text-2xl font-bold"><?= $job->JobTitle ?></h3>
-      <?= $job->JobCode ?>
+    <div class="flex justify-between gap-2">
+      <h3 class="text-base md:text-2xl font-bold"><?= $job->JobTitle ?></h3>
+      <span class="whitespace-nowrap text-sm md:text-base"><?= $job->JobCode ?></span>
     </div>
-    <dl class="flex gap-2">
+    <dl class="flex gap-2 text-xs md:text-base">
       <?php if ($job->EmploymentType) : ?>
         <dt><strong><?= __('Job Type', 'NlsHunter') ?>:</strong></dt>
         <dd class="ml-2"><?= $job->EmploymentType ?></dd>
       <?php endif; ?>
       <?php if (property_exists($job->JobProfessionalFields, 'JobProfessionalFieldInfo')) : ?>
         <dt><strong><?= __('Job Category', 'NlsHunter') ?>:</strong></dt>
-        <dd class="ml-2"><?= $job->JobProfessionalFields->JobProfessionalFieldInfo ?></dd>
+        <dd class="ml-2"><?= $model->getProfessionalFields($job->JobProfessionalFields) ?></dd>
       <?php endif; ?>
       <?php if ($job->RegionId) : ?>
         <dt><strong><?= __('Job Location', 'NlsHunter') ?>:</strong></dt>
-        <dd class="ml-2"><?= $job->RegionId ?></dd>
+        <dd class="ml-2"><?= $model->getLocationById($job->RegionId) ?></dd>
       <?php endif; ?>
     </dl>
   </header>

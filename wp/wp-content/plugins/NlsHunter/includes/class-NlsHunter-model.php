@@ -248,6 +248,15 @@ class NlsHunter_model
         return $job->TotalHits === 1 && property_exists($job, 'Results') && property_exists($job->Results, 'JobInfo') ? $job->Results->JobInfo : null;
     }
 
+    protected function getListNameById($list, $id)
+    {
+        if (!is_array($list)) return '';
+        foreach ($list as $item) {
+            if (key_exists('id', $item) && $item['id'] == $id) return $item['name'];
+        }
+        return '';
+    }
+
     /**
      * Return the categories
      */
@@ -396,6 +405,31 @@ class NlsHunter_model
         if (!$param || !is_array($param)) return '';
         return implode('_', $param);
     }
+
+    public function getLocationById($id)
+    {
+        return $this->getListNameById($this->regions(), $id);
+    }
+
+    public function getProfessionalFields($professionalFields, $seperator = ' | ')
+    {
+        $res = '';
+        if (!property_exists($professionalFields, 'JobProfessionalFieldInfo')) return $res;
+
+        $info = $professionalFields->JobProfessionalFieldInfo;
+        $categories = $this->categories();
+
+        $infos = is_array($info) ? $info : [$info];
+
+        foreach ($infos as $info) {
+            if (gettype($info) === 'object' && property_exists($info, 'CategoryId')) {
+                $res .= $this->getListNameById($categories, $info->CategoryId) . $seperator;
+            }
+        }
+
+        return rtrim($res, ' |');
+    }
+
 
     public function getJobHunterExecuteNewQuery2($searchParams = [], $hunterId = null, $page = 0, $resultRowLimit = null)
     {

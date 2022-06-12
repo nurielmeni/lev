@@ -573,6 +573,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -581,11 +586,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
-}
-
-.my-0 {
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 .my-4 {
@@ -601,6 +601,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
 }
 
 .mt-4 {
@@ -659,10 +663,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.75rem;
 }
 
-.mt-0 {
-  margin-top: 0px;
-}
-
 .mr-auto {
   margin-right: auto;
 }
@@ -685,6 +685,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-10 {
   margin-left: 2.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-2\.5 {
+  margin-top: 0.625rem;
 }
 
 .block {
@@ -888,6 +896,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-3 {
   gap: 0.75rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .truncate {
@@ -1283,6 +1295,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 0.875rem;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1303,11 +1320,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1326,6 +1338,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .leading-4 {
   line-height: 1rem;
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .text-primary {
@@ -1366,11 +1383,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1520,11 +1532,6 @@ article>*:not(.entry-content), .entry-content>* {
 .entry-content h2, .block-editor-block-list__layout h2 {
     font-size: 1.875rem;
     line-height: 2.25rem;
-  }
-
-.entry-content h3, .block-editor-block-list__layout h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
 .entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a {
@@ -1788,6 +1795,11 @@ section.container {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .md\:text-3xl {

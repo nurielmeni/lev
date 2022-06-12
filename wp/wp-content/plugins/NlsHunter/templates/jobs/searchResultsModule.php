@@ -4,6 +4,7 @@
     <?php if ($jobs && is_array($jobs) && key_exists('list', $jobs) && is_array($jobs['list']) && count($jobs['list']) > 0) : ?>
       <?php foreach ($jobs['list'] as $job) : ?>
         <?= render('jobs/job', [
+          'model' => $model,
           'job' => $job,
           'applyCvUrl' => $applyCvUrl
         ]) ?>

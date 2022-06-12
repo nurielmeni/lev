@@ -82,6 +82,7 @@ class NlsHunter_modules
 
         ob_start();
         echo render('jobs/searchResultsModule', [
+            'model' => $this->model,
             'searchResultsUrl' => $this->model->get_link_by_slug('search-results'),
             'applyCvUrl' => $this->model->get_link_by_slug('apply-cv'),
             'jobs' => $jobs

@@ -1,5 +1,5 @@
 <div class="share-wrapper relative w-11">
-  <nav class="absolute flex flex-col z-20 bg-white gap-4 px-2 py-3">
+  <nav class="absolute flex flex-col z-20 bg-white gap-4 px-2 mt-2.5">
     <button class="share-trigger" aria-labelledby="share-label">
       <span id="share-label" hidden><?= __('Share Job', 'NlsHunter') ?></span>
       <i class="fa-solid fa-share-nodes fa-2xl"></i>
