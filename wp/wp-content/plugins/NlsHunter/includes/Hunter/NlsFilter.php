@@ -11,6 +11,7 @@ abstract class SearchPhrase
 {
   const ALL = 'All';
   const EXACT = 'Exact';
+  const ONE_OR_MORE = 'OneOrMore';
 }
 
 class FilterField
@@ -52,7 +53,7 @@ class WhereFilter
 
   public function __construct($filters, $condition)
   {
-    $this->Filters[] = $filters;
+    $this->Filters = is_array($filters) ? $filters : [$filters];
     $this->Condition = $condition;
   }
 }

@@ -26,7 +26,7 @@
             'placeHolder' => __('Scope', 'NlsHunter'),
             'options' => $scopeOptions,
             'clearAllButton' => true, // For single select
-            'multiple' => true,
+            'multiple' => false,
             'value' => key_exists('scope', $searchParams) ? $searchParams['scope'] : [],
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>

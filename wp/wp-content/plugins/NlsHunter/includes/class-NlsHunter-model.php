@@ -430,6 +430,17 @@ class NlsHunter_model
         return rtrim($res, ' |');
     }
 
+    private function addSearchTerm(&$arr, $term)
+    {
+        $field = new FilterField('Description', SearchPhrase::ONE_OR_MORE, $term, NlsFilter::TERMS_NON_ANALAYZED);
+        $arr[] = $field;
+
+        $field = new FilterField('Requiremets', SearchPhrase::ONE_OR_MORE, $term, NlsFilter::TERMS_NON_ANALAYZED);
+        $arr[] = $field;
+
+        $field = new FilterField('JobTitle', SearchPhrase::ONE_OR_MORE, $term, NlsFilter::TERMS_NON_ANALAYZED);
+        $arr[] = $field;
+    }
 
     public function getJobHunterExecuteNewQuery2($searchParams = [], $hunterId = null, $page = 0, $resultRowLimit = null)
     {
@@ -438,6 +449,7 @@ class NlsHunter_model
         $category = key_exists('category', $searchParams) ? $searchParams['category'] : false;
         $scope = key_exists('scope', $searchParams) ? $searchParams['scope'] : false;
         $region = key_exists('region', $searchParams) ? $searchParams['region'] : false;
+        $keyword = key_exists('keyword', $searchParams) ? $searchParams['keyword'] : false;
 
         $cache_key = 'nls_hunter_jobs_' . $this->joinVals($category) . '_' . $this->joinVals($scope) . '_' . $this->joinVals($region) . '_' . $resultRowOffset . '_' . $resultRowLimit;
         if ($this->nlsFlashCache) wp_cache_delete($cache_key);
@@ -467,6 +479,16 @@ class NlsHunter_model
             if ($region) {
                 $filterField = new FilterField('RegionId', SearchPhrase::EXACT, $region, NlsFilter::NUMERIC_VALUES);
                 $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
+            }
+
+            if ($keyword) {
+                $keywords = preg_split("/[\s,]+/", $keyword);
+                $fields = [];
+
+                foreach ($keywords as $term) {
+                    $this->addSearchTerm($fields, $term);
+                }
+                $filter->addWhereFilter($fields, WhereCondition::C_OR);
             }
 
             try {
