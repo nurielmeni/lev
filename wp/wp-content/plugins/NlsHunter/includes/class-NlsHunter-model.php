@@ -78,6 +78,15 @@ class NlsHunter_model
         return esc_url(plugins_url('NlsHunter/public/images/employer-logo.svg'));
     }
 
+    public function getShareUrl($jobUrl)
+    {
+        return [
+            'whatsapp' => 'https://api.whatsapp.com/send?text=' . urlencode($jobUrl),
+            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=' . urlencode($jobUrl),
+            'linkedin' => 'https://www.linkedin.com/shareArticle?mini=true&url=' . urlencode($jobUrl)
+        ];
+    }
+
     public function queryParam($param, $default = '', $post = false)
     {
         if ($post) {

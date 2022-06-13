@@ -2,7 +2,7 @@ var App = App || (function ($) {
 
     // Hide the share widget buttons
     function hideShareButtons(shareWrapper) {
-        $(shareWrapper).find('button.share-item').hide(200, function () {
+        $(shareWrapper).find('.share-item').hide(200, function () {
             $(shareWrapper).removeClass('drop-shadow-md	 rounded-full');
         });
 
@@ -14,7 +14,7 @@ var App = App || (function ($) {
         hideAllShareButtons();
 
         $(shareWrapper).addClass('drop-shadow-md rounded-full');
-        $(shareWrapper).find('button.share-item').show(200);
+        $(shareWrapper).find('.share-item').show(200);
 
         $(shareWrapper).attr({ open: true });
     }

@@ -7,10 +7,10 @@
 }
 
 /** Start: Sumo Select */
-.SumoSelect.open>.CaptionCont,
-.SumoSelect:focus>.CaptionCont,
-.SumoSelect:focus-visible>.CaptionCont,
-.SumoSelect:hover>.CaptionCont {
+.SumoSelect.open > .CaptionCont,
+.SumoSelect:focus > .CaptionCont,
+.SumoSelect:focus-visible > .CaptionCont,
+.SumoSelect:hover > .CaptionCont {
   box-shadow: none !important;
   border: -webkit-focus-ring-color !important;
   outline: -webkit-focus-ring-color auto 1px;
@@ -32,25 +32,25 @@
   padding: 8px !important;
 }
 
-.select.sumo .SumoSelect>.CaptionCont>span.placeholder {
+.select.sumo .SumoSelect > .CaptionCont > span.placeholder {
   color: #242424;
   font-style: normal;
 }
 
-.select.sumo .SumoSelect>.CaptionCont {
+.select.sumo .SumoSelect > .CaptionCont {
   border: none !important;
 }
 
-.select.sumo .SumoSelect>.CaptionCont,
+.select.sumo .SumoSelect > .CaptionCont,
 .select.sumo .SumoSelect.open .search-txt {
   border-radius: 0.375rem;
 }
 
-.nls-hunter-search-wrapper .SumoSelect.open>.optWrapper {
+.nls-hunter-search-wrapper .SumoSelect.open > .optWrapper {
   top: 46px !important;
 }
 
-.job-apply-form-wrapper .SumoSelect.open>.optWrapper {
+.job-apply-form-wrapper .SumoSelect.open > .optWrapper {
   top: 41px !important;
 }
 
@@ -60,5 +60,11 @@
 form.search {
   max-width: 48rem;
 }
-
 /** End: Search Form */
+
+/** Start: Share */
+.share-wrapper nav[open] {
+  padding-block: 0.5rem;
+  margin-block-start: 0;
+}
+/** End: Share */
