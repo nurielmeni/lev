@@ -188,8 +188,10 @@ class NlsHunter_Public
 
         $files = [];
 
+        $applicantData = new ApplicationDetails($_POST);
+
         // 1. Create NCAI
-        $ncaiFile = $this->createNCAI($fields);
+        $ncaiFile = $this->createNCAI($applicantData);
         if (!empty($ncaiFile)) array_push($files, $ncaiFile);
 
         // 2. Get CV File
@@ -217,13 +219,8 @@ class NlsHunter_Public
     public function apply_cv_function()
     {
         $applyCount = 0;
-        $friendsCount = isset($_POST['friend-name']) && is_array($_POST['friend-name']) ? count($_POST['friend-name']) : 0;
-        if ($friendsCount > 0) {
-            for ($i = 0; $i < $friendsCount; $i++) {
-                $fields = new ApplicationDetails($_POST, $i);
-                $applyCount += $this->apply_job($fields, $i);
-            }
-        }
+
+
 
         $response = ['sent' => $applyCount];
         if ($applyCount > 0) {

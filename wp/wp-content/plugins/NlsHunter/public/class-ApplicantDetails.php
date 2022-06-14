@@ -2,13 +2,13 @@
 
 class ApplicationDetails
 {
-    public $sid = '';
-    public $friendName = '';
-    public $friendPhone = '';
-    public $friendJobCode = '';
-    public $employeeName = '';
-    public $employeePhone = '';
-    public $employeeId = '';
+    public $jobCode = '';
+    public $fullname = '';
+    public $id = '';
+    public $email = '';
+    public $linkedin = '';
+    public $studyYear = '';
+    public $approval = '';
 
     public function __construct($data, $idx = 0)
     {
@@ -29,13 +29,13 @@ class ApplicationDetails
     public static function propertyLabels()
     {
         return [
-            'sid' => __('Supplier Id', 'NlsHunter'),
-            'friendName' => __('Friend Name', 'NlsHunter'),
-            'friendPhone' => __('Friend Phone', 'NlsHunter'),
-            'friendJobCode' => __('Friend Job Code', 'NlsHunter'),
-            'employeeName' => __('Employee Name', 'NlsHunter'),
-            'employeePhone' => __('Employee Phone', 'NlsHunter'),
-            'employeeId' => __('Employee Id', 'NlsHunter'),
+            'jobCode' => __('jobCode', 'NlsHunter'),
+            'fullname' => __('Full Name', 'NlsHunter'),
+            'id' => __('Id', 'NlsHunter'),
+            'email' => __('Email', 'NlsHunter'),
+            'linkedin' => __('Linkedin', 'NlsHunter'),
+            'studyYear' => __('Study Year', 'NlsHunter'),
+            'approval' => __('Approval', 'NlsHunter'),
         ];
     }
 

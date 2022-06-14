@@ -573,6 +573,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -581,11 +586,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
-}
-
-.my-0 {
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 .my-4 {
@@ -601,6 +601,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
 }
 
 .mt-4 {
@@ -655,16 +659,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
-.mt-2\.5 {
-  margin-top: 0.625rem;
-}
-
 .mb-7 {
   margin-bottom: 1.75rem;
-}
-
-.mt-0 {
-  margin-top: 0px;
 }
 
 .mr-auto {
@@ -689,6 +685,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-10 {
   margin-left: 2.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-2\.5 {
+  margin-top: 0.625rem;
 }
 
 .block {
@@ -892,6 +896,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-3 {
   gap: 0.75rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .truncate {
@@ -1287,11 +1295,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 0.875rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -1305,6 +1308,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-lg {
@@ -1330,6 +1338,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .leading-4 {
   line-height: 1rem;
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .text-primary {
@@ -1370,11 +1383,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .underline {
