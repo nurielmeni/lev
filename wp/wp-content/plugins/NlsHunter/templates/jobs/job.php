@@ -23,7 +23,7 @@
     <div class="flex justify-between">
       <h3 class="font-bold mb-3"><?= __('Job Description', 'NlsHunter') ?></h3>
       <?= render('jobs/jobShare', [
-        'shareUrl' => $model->getShareUrl()
+        'shareUrl' => $model->getShareUrl($applyCvUrl)
       ]) ?>
     </div>
     <article>
