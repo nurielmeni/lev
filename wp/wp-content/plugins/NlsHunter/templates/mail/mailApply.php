@@ -85,7 +85,7 @@ include_once NLS__PLUGIN_PATH . '/includes/public/class-ApplicantDetails.php.php
     <div id="nls-wrapper">
         <h1><?= __('Applied CV from Jobs Site', 'NlsHunter') ?></h1>
         <table>
-            <?php foreach ($fields as $key => $field) : ?>
+            <?php foreach ($applicantData as $key => $field) : ?>
                 <?php if (!empty($field)) : ?>
                     <tr>
                         <td class="label"><strong><?= ApplicationDetails::propertyLabel($key) ?></strong></td>

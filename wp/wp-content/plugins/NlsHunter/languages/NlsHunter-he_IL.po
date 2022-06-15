@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-06-09 13:32+0300\n"
-"PO-Revision-Date: 2022-06-09 13:33+0300\n"
+"POT-Creation-Date: 2022-06-16 00:12+0300\n"
+"PO-Revision-Date: 2022-06-16 00:13+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/Hunter/NlsHelper.php:100 templates/apply/form.php:53
+#: includes/Hunter/NlsHelper.php:100 templates/apply/form.php:54
 #: templates/applyForJobs.php:39
 msgid "Select"
 msgstr "בחר"
@@ -37,47 +37,47 @@ msgstr "אין אפשרות ליצור מודל."
 msgid "Error: NlsHunter_model: "
 msgstr "שגיאה: NlsHunterFbf_model: "
 
-#: includes/class-NlsHunter-model.php:158
+#: includes/class-NlsHunter-model.php:167
 msgid "Could not init Card Services."
 msgstr "אין אפשרות להתחבר לשירותי Card"
 
-#: includes/class-NlsHunter-model.php:159
+#: includes/class-NlsHunter-model.php:168
 msgid "Error: Card Services: "
 msgstr "שגיאה: שירותי כרטיס"
 
-#: includes/class-NlsHunter-model.php:179
+#: includes/class-NlsHunter-model.php:188
 msgid "Could not init Directory Services."
 msgstr "אין אפשרות להתחבר לשירותי Directory"
 
-#: includes/class-NlsHunter-model.php:180
+#: includes/class-NlsHunter-model.php:189
 msgid "Error: Directory Services: "
 msgstr "שגיאה: שירותי מדריך"
 
-#: includes/class-NlsHunter-model.php:200
+#: includes/class-NlsHunter-model.php:209
 msgid "Could not init Search Services."
 msgstr "אין אפשרות להתחבר לשירותי Search"
 
-#: includes/class-NlsHunter-model.php:201
+#: includes/class-NlsHunter-model.php:210
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
 
-#: includes/class-NlsHunter-model.php:339
+#: includes/class-NlsHunter-model.php:357
 msgid "First Year"
 msgstr "שנה א"
 
-#: includes/class-NlsHunter-model.php:340
+#: includes/class-NlsHunter-model.php:358
 msgid "Second Year"
 msgstr "שנה ב"
 
-#: includes/class-NlsHunter-model.php:341
+#: includes/class-NlsHunter-model.php:359
 msgid "Third Year"
 msgstr "שנה ג"
 
-#: includes/class-NlsHunter-model.php:342
+#: includes/class-NlsHunter-model.php:360
 msgid "Forth Year"
 msgstr "שנה ד"
 
-#: includes/class-NlsHunter-model.php:343
+#: includes/class-NlsHunter-model.php:361
 msgid "Graduate Year"
 msgstr "בוגר/ת"
 
@@ -204,46 +204,51 @@ msgstr "תמונת מפריד"
 msgid "Separetor image width (px)"
 msgstr "רוחב תמונת מפריד"
 
-#: public/class-ApplicantDetails.php:32
+#: public/class-ApplicantDetails.php:38
+msgid "jobCode"
+msgstr "קוד משרה"
+
+#: public/class-ApplicantDetails.php:39 templates/apply/form.php:7
+#: templates/applyForJobs.php:76
+msgid "Full Name"
+msgstr "שם מלא"
+
+#: public/class-ApplicantDetails.php:40
+msgid "Id"
+msgstr "ת.ז"
+
+#: public/class-ApplicantDetails.php:41 templates/apply/form.php:29
+msgid "Email"
+msgstr "אימייל"
+
+#: public/class-ApplicantDetails.php:42
+msgid "Linkedin"
+msgstr "פרופיל לינקדאין"
+
+#: public/class-ApplicantDetails.php:43 templates/apply/form.php:52
+msgid "Study Year"
+msgstr "שנת לימודים"
+
+#: public/class-ApplicantDetails.php:44
+msgid "Approval"
+msgstr "אישור תנאי שימוש"
+
+#: public/class-ApplicantDetails.php:45
 msgid "Supplier Id"
 msgstr "מזהה ספק"
 
-#: public/class-ApplicantDetails.php:33 templates/applyForJobs.php:16
-msgid "Friend Name"
-msgstr "שם החבר"
-
-#: public/class-ApplicantDetails.php:34
-msgid "Friend Phone"
-msgstr "טלפון החבר"
-
-#: public/class-ApplicantDetails.php:35
-msgid "Friend Job Code"
-msgstr "קוד משרה לחבר"
-
-#: public/class-ApplicantDetails.php:36
-msgid "Employee Name"
-msgstr "שם עובד"
-
-#: public/class-ApplicantDetails.php:37
-msgid "Employee Phone"
-msgstr "טלפון עובד"
-
-#: public/class-ApplicantDetails.php:38
-msgid "Employee Id"
-msgstr "מס׳ זהות עובד"
-
-#: public/class-NlsHunter-public.php:326
+#: public/class-NlsHunter-public.php:324
 msgid "Applicant form data: "
 msgstr "פרטי החבר:"
 
-#: public/class-NlsHunter-public.php:354
+#: public/class-NlsHunter-public.php:352
 #, fuzzy
 #| msgid "CV Applied from Reichman Jobs Fair Site"
 msgid "CV Applied from Mega Sport Jobs Site"
 msgstr "קורות חיים נשלחו מאתר יריד משרות רייכמן"
 
 #: templates/apply/applyModule.php:4 templates/hotJobs/hotJob.php:8
-#: templates/jobs/job.php:28
+#: templates/jobs/job.php:36
 msgid "Submit CV"
 msgstr "הגישו קורות חיים"
 
@@ -255,45 +260,37 @@ msgstr "הגשת מועמדות למי שאינו סטודנט/ית או בוג�
 msgid "Send"
 msgstr "שלח"
 
-#: templates/apply/form.php:7 templates/applyForJobs.php:76
-msgid "Full Name"
-msgstr "שם מלא"
-
 #: templates/apply/form.php:18
 msgid "Id Number"
 msgstr "ת.ז"
-
-#: templates/apply/form.php:29
-msgid "Email"
-msgstr "אימייל"
 
 #: templates/apply/form.php:40
 msgid "Linkedin Profile"
 msgstr "פרופיל לינקדאין"
 
-#: templates/apply/form.php:52
-msgid "Study Year"
-msgstr "שנת לימודים"
-
 #: templates/apply/form.php:63 templates/applyForJobs.php:48
 msgid "Upload CV"
 msgstr "העלאת קובץ קו”ח"
 
-#: templates/apply/form.php:66 templates/apply/form.php:83
+#: templates/apply/form.php:66 templates/apply/form.php:84
 msgid "Select File"
 msgstr "בחר קובץ"
 
-#: templates/apply/form.php:80
+#: templates/apply/form.php:81
 msgid "Another Document (Score sheet/Certificate)"
 msgstr "מסמך נוסף (גיליון ציונים/תעודה)"
 
-#: templates/apply/form.php:97
+#: templates/apply/form.php:99
 msgid "I approve the terms of use and policy."
 msgstr "אני מאשר/ת את תנאי השימוש באתר ומדיניות הפרטיות."
 
 #: templates/applyForJobs.php:6
 msgid "My friend details:"
 msgstr "פרטי החבר:"
+
+#: templates/applyForJobs.php:16
+msgid "Friend Name"
+msgstr "שם החבר"
 
 #: templates/applyForJobs.php:27
 msgid "Phone"
@@ -323,7 +320,7 @@ msgstr "מס׳ נייד"
 msgid "ID"
 msgstr "מס׳ ת״ז"
 
-#: templates/form/nlsApplyBtn.php:12
+#: templates/form/nlsApplyBtn.php:13
 msgid "Submit"
 msgstr "חפש"
 
@@ -339,19 +336,19 @@ msgstr "משרות חמות"
 msgid "All Jobs"
 msgstr "כל המשרות"
 
-#: templates/jobs/job.php:8
+#: templates/jobs/job.php:9
 msgid "Job Type"
 msgstr "סוג משרה"
 
-#: templates/jobs/job.php:10
+#: templates/jobs/job.php:13
 msgid "Job Category"
 msgstr "תחום"
 
-#: templates/jobs/job.php:12
+#: templates/jobs/job.php:17
 msgid "Job Location"
 msgstr "מיקום"
 
-#: templates/jobs/job.php:18
+#: templates/jobs/job.php:24
 msgid "Job Description"
 msgstr "תיאור המשרה"
 
@@ -364,7 +361,7 @@ msgstr "שיתוף משרה"
 msgid "Search Results"
 msgstr "תוצאות חיפוש"
 
-#: templates/jobs/searchResultsModule.php:12
+#: templates/jobs/searchResultsModule.php:13
 msgid "No jobs were found"
 msgstr "לא נמצאו משרות המתאימות למאפייני החיפוש"
 
@@ -433,6 +430,21 @@ msgstr ".‫API fot Niloosoft HunterHRMS System"
 #. Author of the plugin/theme
 msgid "Meni Nurie"
 msgstr "מני נוריאל"
+
+#~ msgid "Friend Phone"
+#~ msgstr "טלפון החבר"
+
+#~ msgid "Friend Job Code"
+#~ msgstr "קוד משרה לחבר"
+
+#~ msgid "Employee Name"
+#~ msgstr "שם עובד"
+
+#~ msgid "Employee Phone"
+#~ msgstr "טלפון עובד"
+
+#~ msgid "Employee Id"
+#~ msgstr "מס׳ זהות עובד"
 
 #~ msgid "serach your next job"
 #~ msgstr "לחיפוש התפקיד הבא שלך"

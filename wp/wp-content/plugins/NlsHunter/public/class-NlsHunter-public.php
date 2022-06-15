@@ -37,6 +37,7 @@ class NlsHunter_Public
     const PHONE = 'phone';
     const EMAIL = 'email';
     const CV_FILE = 'cv-file';
+    const ADDITIONAL_FILE = 'additional-file';
 
     /**
      * The ID of this plugin.
@@ -161,19 +162,26 @@ class NlsHunter_Public
      * Get the CV file for the applicable friend
      * the CV file uploads temporarily and assigned a name
      */
-    private function getCvFile($idx)
+    private function getCvFile($name, $idx = null)
     {
-        if (
-            isset($_FILES[self::CV_FILE][$idx]) &&
-            isset($_FILES[self::CV_FILE][$idx]['name']) &&
-            strlen($_FILES[self::CV_FILE][$idx]['name']) > 0 &&
-            strlen($_FILES[self::CV_FILE][$idx]['tmp_name']) > 0 &&
-            !$_FILES[self::CV_FILE][$idx]['error'] &&
-            $_FILES[self::CV_FILE][$idx]['size'] > 0
-        ) {
-            $fileExt = pathinfo($_FILES[self::CV_FILE][$idx]['name'])['extension'];
+        if ($idx === null) {
+            $fileExt = pathinfo($_FILES[$name]['name'])['extension'];
             $tmpCvFile = $this->getTempFile($fileExt);
-            move_uploaded_file($_FILES[self::CV_FILE][$idx]['tmp_name'], $tmpCvFile);
+            move_uploaded_file($_FILES[$name]['tmp_name'], $tmpCvFile);
+            return $tmpCvFile;
+        }
+
+        if (
+            isset($_FILES[$name][$idx]) &&
+            isset($_FILES[$name][$idx]['name']) &&
+            strlen($_FILES[$name][$idx]['name']) > 0 &&
+            strlen($_FILES[$name][$idx]['tmp_name']) > 0 &&
+            !$_FILES[$name][$idx]['error'] &&
+            $_FILES[$name][$idx]['size'] > 0
+        ) {
+            $fileExt = pathinfo($_FILES[$name][$idx]['name'])['extension'];
+            $tmpCvFile = $this->getTempFile($fileExt);
+            move_uploaded_file($_FILES[$name][$idx]['tmp_name'], $tmpCvFile);
             return $tmpCvFile;
         }
         return '';
@@ -182,28 +190,34 @@ class NlsHunter_Public
     /*
      * Apply the friend request
      */
-    private function apply_job($fields, $idx)
+    private function apply_job($applicantData, $idx = null)
     {
         $count = 0;
 
         $files = [];
-
-        $applicantData = new ApplicationDetails($_POST);
 
         // 1. Create NCAI
         $ncaiFile = $this->createNCAI($applicantData);
         if (!empty($ncaiFile)) array_push($files, $ncaiFile);
 
         // 2. Get CV File
-        $tmpCvFile = $this->getCvFile($idx);
+        $tmpCvFile = $this->getCvFile(self::CV_FILE);
         if (empty($tmpCvFile)) {
-            $tmpCvFile = $this->genarateCvFile($fields);
+            $tmpCvFile = $this->genarateCvFile($applicantData);
         }
 
         if (!empty($tmpCvFile)) array_push($files, $tmpCvFile);
 
+        // 2. Get additional File
+        $tmpAdditionalFile = $this->getCvFile(self::ADDITIONAL_FILE);
+        if (empty($tmpAdditionalFile)) {
+            $tmpAdditionalFile = $this->genarateCvFile($applicantData);
+        }
+
+        if (!empty($tmpAdditionalFile)) array_push($files, $tmpAdditionalFile);
+
         // 3. Send email with file attachments
-        $count += $this->sendHtmlMail($files, $fields, 0) ? 1 : 0;
+        $count += $this->sendHtmlMail($files, $applicantData, 0) ? 1 : 0;
 
         // 4. Remove temp files
 
@@ -220,7 +234,8 @@ class NlsHunter_Public
     {
         $applyCount = 0;
 
-
+        $applicantData = new ApplicationDetails($_POST, $this->nlsConfig->getNlsSupplierId());
+        $this->apply_job($applicantData);
 
         $response = ['sent' => $applyCount];
         if ($applyCount > 0) {
@@ -301,60 +316,62 @@ class NlsHunter_Public
         ];
     }
 
-    private function createNCAI($fields, $i = 0)
+    private function createNCAI($applicantData, $i = 0)
     {
         //create xml file
         $xml_obj = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><NiloosoftCvAnalysisInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"></NiloosoftCvAnalysisInfo>');
 
         // Applying Person
         $applyingPerson = $xml_obj->addChild('ApplyingPerson');
-        $applyingPerson->addChild('EntityLocalName', $fields->friendName);
+        $applyingPerson->addChild('EntityLocalName', $applicantData->fullname);
 
-        $phoneData = $this->getPhoneData($fields->friendPhone);
-        $phoneInfo = $applyingPerson->addChild('Phones')->addChild('PhoneInfo');
-        $phoneInfo->addChild('CountryCode', $phoneData['CountryCode']);
-        $phoneInfo->addChild('AreaCode', $phoneData['AreaCode']);
-        $phoneInfo->addChild('PhoneNumber', $phoneData['PhoneNumber']);
-        $phoneInfo->addChild('PhoneType', $phoneData['PhoneType']);
+        if (property_exists($applicantData, 'phone')) {
+            $phoneInfo = $applyingPerson->addChild('Phones')->addChild('PhoneInfo');
+            $phoneData = $this->getPhoneData($applicantData->phone);
+            $phoneInfo->addChild('CountryCode', $phoneData['CountryCode']);
+            $phoneInfo->addChild('AreaCode', $phoneData['AreaCode']);
+            $phoneInfo->addChild('PhoneNumber', $phoneData['PhoneNumber']);
+            $phoneInfo->addChild('PhoneType', $phoneData['PhoneType']);
+        }
 
-        $applyingPerson->addChild('SupplierId', $fields->sid);
+        $applyingPerson->addChild('SupplierId', $applicantData->sid);
 
         // Notes
         $applicant_notes = __('Applicant form data: ', 'NlsHunter') . "\r\n";
-        // Change the $fields value for strongSide to include the name and not the id
-        foreach ($fields as $key => $field) {
+        // Change the $applicantData value for strongSide to include the name and not the id
+        foreach ($applicantData as $key => $field) {
             if (empty($field)) continue;
             $applicant_notes .= ApplicationDetails::propertyLabel($key) . ': ' . $field . "\r\n";
         }
         $xml_obj->addChild('Notes', $applicant_notes);
 
         // Supplier ID
-        $xml_obj->SupplierId = $fields->sid;
+        $xml_obj->SupplierId = $applicantData->sid;
 
         $ncaiFile = $this->getTempFile('ncai');
         $xml_obj->asXML($ncaiFile);
         return $ncaiFile;
     }
 
-    public function sendHtmlMail($files, $fields, $i, $msg = '')
+    public function sendHtmlMail($files, $applicantData, $i, $msg = '')
     {
-        // Change the $fields value for strongSide to include the name and not the id
+        // Change the $applicantData value for strongSide to include the name and not the id
         $to = $this->nlsConfig->getNlsToWebmail();
         $bcc = $this->nlsConfig->getNlsBccMail();
-        $fromName = 'Mega Sport - FBF Jobs Site';
+        $fromName = 'Lev - Academic Center - Jobs Site';
         $fromMail = 'noreply@cvwebmail.com';
 
         $headers = ['Content-Type: text/html; charset=UTF-8'];
         array_push($headers, 'From: ' . $fromName . ' <' . $fromMail . '>');
         if (strlen($bcc) > 0) array_push($headers, 'Bcc: ' . $bcc);
 
-        $subject = __('CV Applied from Mega Sport Jobs Site', 'NlsHunter') . ': ';
-        $subject .= $fields->friendJobCode ? $fields->friendJobCode : $msg;
+        $subject = __('CV Applied from Lev Jobs Site', 'NlsHunter') . ': ';
+        $subject .= $applicantData->jobCode ? $applicantData->jobCode : $msg;
 
         $attachments = $files ?: [];
 
         $body = render('mail/mailApply', [
-            'fields' => $fields,
+            'applicantData' => $applicantData,
         ]);
 
         global $phpmailer;

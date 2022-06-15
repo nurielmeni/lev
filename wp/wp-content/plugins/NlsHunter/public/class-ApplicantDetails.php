@@ -9,8 +9,12 @@ class ApplicationDetails
     public $linkedin = '';
     public $studyYear = '';
     public $approval = '';
+    public $sid;
 
-    public function __construct($data, $idx = 0)
+    /**
+     * idx - if several submitions, the id of the form data
+     */
+    public function __construct($data, $sid, $idx = null)
     {
         foreach ($data as $key => $value) {
             $prop = $this->dashesToCamelCase($key);
@@ -18,6 +22,8 @@ class ApplicationDetails
 
             $this->$prop = is_array($value) ? $value[$idx] : $value;
         }
+
+        $this->sid = $this->sid ? $this->sid : $sid;
     }
 
     public static function propertyLabel($prop)
@@ -36,6 +42,7 @@ class ApplicationDetails
             'linkedin' => __('Linkedin', 'NlsHunter'),
             'studyYear' => __('Study Year', 'NlsHunter'),
             'approval' => __('Approval', 'NlsHunter'),
+            'sid' => __('Supplier Id', 'NlsHunter'),
         ];
     }
 
