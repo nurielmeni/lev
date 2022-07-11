@@ -238,7 +238,7 @@ class NlsDirectory extends NlsService
         }
     }
 
-    public function getJobEnploymentType()
+    public function getJobEmploymentType()
     {
         $transactionCode = NlsHelper::newGuid();
         try {
