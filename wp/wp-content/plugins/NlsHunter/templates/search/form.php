@@ -49,8 +49,8 @@
             'wrapperClass' => 'sumo text-xl col-span-2 sm:col-span-1',
             'class' => 'rounded-md shadow-md border-0 px-3 py-2 text-primary md:text-2xl',
             'name' => 'hybrid',
-            'placeHolder' => __('Hybrid', 'NlsHunter'),
-            'options' => $hybridOptions,
+            'placeHolder' => __('EmploymentType', 'NlsHunter'),
+            'options' => $employmentType,
             'clearAllButton' => true, // For single select
             'multiple' => true,
             'value' => key_exists('hybrid', $searchParams) ? $searchParams['hybrid'] : [],

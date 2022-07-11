@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-06-16 00:12+0300\n"
-"PO-Revision-Date: 2022-06-16 00:13+0300\n"
+"POT-Creation-Date: 2022-07-11 11:10+0300\n"
+"PO-Revision-Date: 2022-07-11 11:10+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: NlsHunter.php\n"
@@ -61,23 +61,23 @@ msgstr "אין אפשרות להתחבר לשירותי Search"
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
 
-#: includes/class-NlsHunter-model.php:357
+#: includes/class-NlsHunter-model.php:376
 msgid "First Year"
 msgstr "שנה א"
 
-#: includes/class-NlsHunter-model.php:358
+#: includes/class-NlsHunter-model.php:377
 msgid "Second Year"
 msgstr "שנה ב"
 
-#: includes/class-NlsHunter-model.php:359
+#: includes/class-NlsHunter-model.php:378
 msgid "Third Year"
 msgstr "שנה ג"
 
-#: includes/class-NlsHunter-model.php:360
+#: includes/class-NlsHunter-model.php:379
 msgid "Forth Year"
 msgstr "שנה ד"
 
-#: includes/class-NlsHunter-model.php:361
+#: includes/class-NlsHunter-model.php:380
 msgid "Graduate Year"
 msgstr "בוגר/ת"
 
@@ -237,15 +237,13 @@ msgstr "אישור תנאי שימוש"
 msgid "Supplier Id"
 msgstr "מזהה ספק"
 
-#: public/class-NlsHunter-public.php:324
+#: public/class-NlsHunter-public.php:335
 msgid "Applicant form data: "
 msgstr "פרטי החבר:"
 
-#: public/class-NlsHunter-public.php:352
-#, fuzzy
-#| msgid "CV Applied from Reichman Jobs Fair Site"
-msgid "CV Applied from Mega Sport Jobs Site"
-msgstr "קורות חיים נשלחו מאתר יריד משרות רייכמן"
+#: public/class-NlsHunter-public.php:363
+msgid "CV Applied from Lev Jobs Site"
+msgstr "קורות חיים נשלחו מאתר משרות לב"
 
 #: templates/apply/applyModule.php:4 templates/hotJobs/hotJob.php:8
 #: templates/jobs/job.php:36
@@ -406,8 +404,8 @@ msgid "Region"
 msgstr "מיקום"
 
 #: templates/search/form.php:52
-msgid "Hybrid"
-msgstr "היברידי"
+msgid "EmploymentType"
+msgstr "אופן העסקה"
 
 #: templates/search/form.php:64
 msgid "Search by keyword"
@@ -430,6 +428,9 @@ msgstr ".‫API fot Niloosoft HunterHRMS System"
 #. Author of the plugin/theme
 msgid "Meni Nurie"
 msgstr "מני נוריאל"
+
+#~ msgid "Hybrid"
+#~ msgstr "היברידי"
 
 #~ msgid "Friend Phone"
 #~ msgstr "טלפון החבר"
@@ -549,9 +550,6 @@ msgstr "מני נוריאל"
 
 #~ msgid "Last Date"
 #~ msgstr "עדכון אחרון"
-
-#~ msgid "Employment Type"
-#~ msgstr "אופן העסקה"
 
 #~ msgid "To all jobs  >>"
 #~ msgstr "לכל המשרות  >>"

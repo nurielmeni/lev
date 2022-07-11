@@ -8,7 +8,7 @@
             'categoryOptions' => $categoryOptions,
             'scopeOptions' =>  $scopeOptions,
             'locationOptions' => $locationOptions,
-            'hybridOptions' =>  $hybridOptions,
+            'employmentType' =>  $employmentType,
             'searchResultsUrl' => $searchResultsUrl,
             'searchParams' => $searchParams,
             'atts' => $atts
