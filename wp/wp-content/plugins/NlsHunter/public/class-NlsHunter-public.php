@@ -229,10 +229,8 @@ class NlsHunter_Public
      */
     public function apply_cv_function()
     {
-        $applyCount = 0;
-
         $applicantData = new ApplicationDetails($_POST, $this->nlsConfig->getNlsSupplierId());
-        $this->apply_job($applicantData);
+        $applyCount = $this->apply_job($applicantData);
 
         $response = ['sent' => $applyCount];
         if ($applyCount > 0) {
