@@ -10,6 +10,7 @@ require_once NLS__PLUGIN_PATH . '/renderFunction.php';
 class NlsHunter_modules
 {
     private $model;
+    private $searchFields = ['category', 'scope', 'region', 'employment-type', 'keyword'];
 
     public function __construct($model, $version)
     {
@@ -43,7 +44,7 @@ class NlsHunter_modules
         $employmentType = $this->model->jobEmploymentType();
 
         $searchResultsUrl = $this->model->get_link_by_slug('search-results');
-        $searchParams = $this->getSearchParams(['category', 'scope', 'region', 'hybrid', 'keyword']);
+        $searchParams = $this->getSearchParams($this->searchFields);
 
         ob_start();
         echo render('search/searchModule', [
@@ -77,7 +78,7 @@ class NlsHunter_modules
     {
         if (!$this->model) return;
 
-        $searchParams = $this->getSearchParams(['category', 'scope', 'region', 'hybrid', 'keyword']);
+        $searchParams = $this->getSearchParams($this->searchFields);
         $jobs = $this->model->getJobHunterExecuteNewQuery2($searchParams);
 
         ob_start();

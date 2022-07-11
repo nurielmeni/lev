@@ -480,9 +480,17 @@ class NlsHunter_model
         $category = key_exists('category', $searchParams) ? $searchParams['category'] : false;
         $scope = key_exists('scope', $searchParams) ? $searchParams['scope'] : false;
         $region = key_exists('region', $searchParams) ? $searchParams['region'] : false;
+        $employmentType = key_exists('employment-type', $searchParams) ? $searchParams['employment-type'] : false;
         $keyword = key_exists('keyword', $searchParams) ? $searchParams['keyword'] : false;
 
-        $cache_key = 'nls_hunter_jobs_' . $this->joinVals($category) . '_' . $this->joinVals($scope) . '_' . $this->joinVals($region) . '_' . $resultRowOffset . '_' . $resultRowLimit;
+        $cache_key = 'nls_hunter_jobs_' .
+            $this->joinVals($category) . '_' .
+            $this->joinVals($scope) . '_' .
+            $this->joinVals($region) . '_' .
+            $this->joinVals($employmentType) . '_' .
+            $resultRowOffset . '_' .
+            $resultRowLimit;
+
         if ($this->nlsFlashCache) wp_cache_delete($cache_key);
 
         $jobs = wp_cache_get($cache_key);
@@ -518,6 +526,14 @@ class NlsHunter_model
              */
             if ($region) {
                 $filterField = new FilterField('RegionId', SearchPhrase::EXACT, $region, NlsFilter::NUMERIC_VALUES);
+                $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
+            }
+
+            /**
+             * Employment Type
+             */
+            if ($employmentType) {
+                $filterField = new FilterField('EmploymentType', SearchPhrase::EXACT, $employmentType, NlsFilter::TERMS_NON_ANALAYZED);
                 $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
             }
 

@@ -243,16 +243,21 @@ class NlsDirectory extends NlsService
         $transactionCode = NlsHelper::newGuid();
         try {
             $params = array(
-                "languageId" => $this->langCode,
-                "listName" => 'JobEnploymentType',
                 "transactionCode" => $transactionCode,
+                "listName" => 'JobEnploymentType',
+                "languageId" => $this->langCode,
+                "parentItemId" => null
             );
-            $result = $this->client->GetListByListName($params)->GetListByListNameResult->HunterListItem;
+            $result = $this->client->GetListItems($params)->GetListItemsResult->ListItemInfo;
+
             if (!is_array($result)) $result[] = $result;
 
             $list = [];
             foreach ($result as $enploymentType) {
-                $list[] = ["id" => $enploymentType->Value, "name" => $enploymentType->Text];
+                $list[] = [
+                    "id" => $enploymentType->ListItemValue,
+                    "name" => $enploymentType->ValueTranslated
+                ];
             }
 
             return $list;

@@ -44,16 +44,16 @@
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
 
-        <!-- HYBRID -->
+        <!-- Employment Type -->
         <?= render('form/nlsSelectField', [
             'wrapperClass' => 'sumo text-xl col-span-2 sm:col-span-1',
             'class' => 'rounded-md shadow-md border-0 px-3 py-2 text-primary md:text-2xl',
-            'name' => 'hybrid',
+            'name' => 'employment-type',
             'placeHolder' => __('EmploymentType', 'NlsHunter'),
             'options' => $employmentType,
             'clearAllButton' => true, // For single select
-            'multiple' => true,
-            'value' => key_exists('hybrid', $searchParams) ? $searchParams['hybrid'] : [],
+            'multiple' => false,
+            'value' => key_exists('employment-type', $searchParams) ? $searchParams['employment-type'] : [],
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
 
