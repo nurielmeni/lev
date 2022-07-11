@@ -300,6 +300,25 @@ class NlsHunter_model
         }
     }
 
+    public function jobEmploymentType()
+    {
+        $this->initDirectoryService();
+
+        $cacheKey = 'JOB_EMPLOYMENT_TYPE';
+        $jobEmploymentType = wp_cache_get($cacheKey);
+        try {
+            if (false === $jobEmploymentType) {
+                $jobEmploymentType = $this->nlsDirectory->getJobEmploymentType();
+                wp_cache_set($cacheKey, $jobEmploymentType, 'directory', $this->nlsCacheTime);
+            }
+
+            return is_array($jobEmploymentType) ? $jobEmploymentType : [];
+        } catch (Exception $ex) {
+            $this->notice('Model: jobEmploymentType', $ex->getMessage());
+            return null;
+        }
+    }
+
     public function jobAreas()
     {
         $this->initDirectoryService();

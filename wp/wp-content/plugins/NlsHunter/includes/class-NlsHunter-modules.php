@@ -40,7 +40,7 @@ class NlsHunter_modules
         $categoryOptions = $this->model->categories();
         $scopeOptions = $this->model->jobScopes();
         $locationOptions = $this->model->regions();
-        $hybridOptions = $this->model->hybrid();
+        $hybridOptions = $this->model->jobEmploymentType();
 
         $searchResultsUrl = $this->model->get_link_by_slug('search-results');
         $searchParams = $this->getSearchParams(['category', 'scope', 'region', 'hybrid', 'keyword']);
