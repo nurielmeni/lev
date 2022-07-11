@@ -164,24 +164,21 @@ class NlsHunter_Public
      */
     private function getCvFile($name, $idx = null)
     {
-        if ($idx === null) {
-            $fileExt = pathinfo($_FILES[$name]['name'])['extension'];
-            $tmpCvFile = $this->getTempFile($fileExt);
-            move_uploaded_file($_FILES[$name]['tmp_name'], $tmpCvFile);
-            return $tmpCvFile;
-        }
+        if (!isset($_FILES[$name])) return '';
+        $file = $idx ? $_FILES[$name][$idx] : $_FILES[$name];
+
 
         if (
-            isset($_FILES[$name][$idx]) &&
-            isset($_FILES[$name][$idx]['name']) &&
-            strlen($_FILES[$name][$idx]['name']) > 0 &&
-            strlen($_FILES[$name][$idx]['tmp_name']) > 0 &&
-            !$_FILES[$name][$idx]['error'] &&
-            $_FILES[$name][$idx]['size'] > 0
+            isset($file) &&
+            isset($file['name']) &&
+            strlen($file['name']) > 0 &&
+            strlen($file['tmp_name']) > 0 &&
+            !$file['error'] &&
+            $file['size'] > 0
         ) {
-            $fileExt = pathinfo($_FILES[$name][$idx]['name'])['extension'];
+            $fileExt = pathinfo($file['name'])['extension'];
             $tmpCvFile = $this->getTempFile($fileExt);
-            move_uploaded_file($_FILES[$name][$idx]['tmp_name'], $tmpCvFile);
+            move_uploaded_file($file['tmp_name'], $tmpCvFile);
             return $tmpCvFile;
         }
         return '';

@@ -507,19 +507,24 @@ class NlsHunter_model
                     $resultRowLimit,
                     $filter
                 );
+
+                $jobs['totalHits'] = property_exists($res, 'TotalHits') ? $res->TotalHits : 0;
+
+                if ($jobs['totalHits'] === 0) {
+                    $jobs['list'] = [];
+                } else {
+                    $jobInfo = property_exists($res, 'Results') && property_exists($res->Results, 'JobInfo') ? $res->Results->JobInfo : false;
+                    $jobs['list'] = !$jobInfo ? [] : (is_array($jobInfo) ? $jobInfo : [$jobInfo]);
+                }
+
+                wp_cache_set($cache_key, $jobs);
             } catch (Exception $ex) {
                 $this->notice('Model: getJobHunterExecuteNewQuery2', $ex->getMessage());
                 return null;
             }
         }
 
-        $jobs['totalHits'] = property_exists($res, 'TotalHits') ? $res->TotalHits : 0;
-        if ($jobs['totalHits'] === 0) {
-            $jobs['list'] = [];
-        } else {
-            $jobInfo = property_exists($res, 'Results') && property_exists($res->Results, 'JobInfo') ? $res->Results->JobInfo : false;
-            $jobs['list'] = !$jobInfo ? [] : (is_array($jobInfo) ? $jobInfo : [$jobInfo]);
-        }
+
 
         return $jobs;
     }
