@@ -6,5 +6,5 @@
         <br />
         <a href="<?= get_home_url(); ?>" class="back bg-primary text-white text-4xl px-8 pt-1 pb-2 rounded-md"><?= __('Back', 'NlsHunter') ?></a>
     </div>
-    <br />>
+    <br />
 </div>
