@@ -449,6 +449,9 @@ class NlsHunter_model
 
         $field = new FilterField('JobTitle', SearchPhrase::ONE_OR_MORE, $term, NlsFilter::TERMS_NON_ANALAYZED);
         $arr[] = $field;
+
+        $field = new FilterField('JobCode', SearchPhrase::EXACT, $term, NlsFilter::TERMS_NON_ANALAYZED);
+        $arr[] = $field;
     }
 
     public function getJobHunterExecuteNewQuery2($searchParams = [], $hunterId = null, $page = 0, $resultRowLimit = null)
@@ -473,6 +476,9 @@ class NlsHunter_model
 
             $filter->addSuplierIdFilter($this->nlsGetSupplierId());
 
+            /**
+             * Category
+             */
             if ($category) {
                 $filterField = new FilterField('JobProfessionalFields', SearchPhrase::EXACT, $category, NlsFilter::NESTED);
                 $nestedFilterField = new FilterField('JobProfessionalFieldInfo_CategoryId', SearchPhrase::ALL, $category, NlsFilter::NUMERIC_VALUES);
@@ -480,16 +486,25 @@ class NlsHunter_model
                 $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
             }
 
+            /**
+             * Scope
+             */
             if ($scope) {
                 $filterField = new FilterField('JobScope', SearchPhrase::EXACT, $scope, NlsFilter::NUMERIC_VALUES);
                 $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
             }
 
+            /**
+             * Region
+             */
             if ($region) {
                 $filterField = new FilterField('RegionId', SearchPhrase::EXACT, $region, NlsFilter::NUMERIC_VALUES);
                 $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
             }
 
+            /**
+             * Keywords
+             */
             if ($keyword) {
                 $keywords = preg_split("/[\s,]+/", $keyword);
                 $fields = [];
