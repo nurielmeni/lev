@@ -34,7 +34,7 @@ include_once 'includes/SocialWalker.php';
 		<div class="area text-2xl border-y-2 my-4 py-4 lg:border-y-0 lg:my-0 lg:py-0 lg:border-x-2 lg:mx-4 lg:px-4">
 			<h3 class="text-3xl font-bold mb-6"><?= __('Contact', 'tailpress') ?></h3>
 			<p><?= __('Message to career center - also Whatsapp', 'tailpress') ?>&nbsp;<a target="_blank" href="tel:026751063">02-6751063</a></p>
-			<p><a target="_blank" href="mailto:hasama@jct.ac.il">hasama@jct.ac.il</a></p>
+			<p><a target="_blank" href="mailto:career@jct.ac.il">career@jct.ac.il</a></p>
 		</div>
 
 		<div class="area text-2xl">
