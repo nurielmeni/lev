@@ -1,4 +1,4 @@
-<form class="search py-8 p-4 mx-auto" action="<?= $searchResultsUrl ?>">
+<form class="search py-8 p1 md:p-4 mx-auto" action="<?= $searchResultsUrl ?>">
     <?php if (key_exists('title', $atts) && !empty($atts['title'])) : ?>
         <h2 class="mb-7"><?= $atts['title'] ?></h2>
     <?php endif; ?>
@@ -69,7 +69,7 @@
 
         <!-- APPLY BUTTON -->
         <?= render('form/nlsApplyBtn', [
-            'class' => 'rounded-md shadow-md px-3 py-2  w-full bg-gradient-to-b from-btn-s via-btn-m to-btn-e text-white font-bold md:text-2xl',
+            'class' => 'rounded-md shadow-md px-3 py-2  w-full bg-gradient-to-b from-btn-s via-btn-m to-btn-e text-white font-bold text-xl md:text-2xl',
             'text' => __('Search', 'NlsHunter')
         ]); ?>
     </div>
