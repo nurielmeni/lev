@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-07-11 11:10+0300\n"
-"PO-Revision-Date: 2022-07-11 11:10+0300\n"
+"POT-Creation-Date: 2022-08-02 19:18+0300\n"
+"PO-Revision-Date: 2022-08-02 19:23+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -61,23 +61,23 @@ msgstr "אין אפשרות להתחבר לשירותי Search"
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
 
-#: includes/class-NlsHunter-model.php:376
+#: includes/class-NlsHunter-model.php:395
 msgid "First Year"
 msgstr "שנה א"
 
-#: includes/class-NlsHunter-model.php:377
+#: includes/class-NlsHunter-model.php:396
 msgid "Second Year"
 msgstr "שנה ב"
 
-#: includes/class-NlsHunter-model.php:378
+#: includes/class-NlsHunter-model.php:397
 msgid "Third Year"
 msgstr "שנה ג"
 
-#: includes/class-NlsHunter-model.php:379
+#: includes/class-NlsHunter-model.php:398
 msgid "Forth Year"
 msgstr "שנה ד"
 
-#: includes/class-NlsHunter-model.php:380
+#: includes/class-NlsHunter-model.php:399
 msgid "Graduate Year"
 msgstr "בוגר/ת"
 
@@ -109,6 +109,10 @@ msgstr "‫Consumer"
 #: includes/customizer/customizerNiloosApplication.php:39
 msgid "Set the application supplier ID"
 msgstr "‫Supplier ID"
+
+#: includes/customizer/customizerNiloosApplication.php:54
+msgid "Hot Jobs supplier ID"
+msgstr ""
 
 #: includes/customizer/customizerNiloosApplication.php:69
 msgid "Web Mail"
@@ -396,22 +400,22 @@ msgid "Category"
 msgstr "תחום"
 
 #: templates/search/form.php:26
-msgid "Scope"
+msgid "EmploymentType"
 msgstr "היקף משרה"
 
-#: templates/search/form.php:39
+#: templates/search/form.php:40
 msgid "Region"
 msgstr "מיקום"
 
-#: templates/search/form.php:52
-msgid "EmploymentType"
+#: templates/search/form.php:53
+msgid "Employment Form"
 msgstr "אופן העסקה"
 
-#: templates/search/form.php:64
+#: templates/search/form.php:65
 msgid "Search by keyword"
 msgstr "חיפוש לפי מילת חיפוש"
 
-#: templates/search/form.php:73
+#: templates/search/form.php:74
 msgid "Search"
 msgstr "חפש"
 
@@ -428,6 +432,9 @@ msgstr ".‫API fot Niloosoft HunterHRMS System"
 #. Author of the plugin/theme
 msgid "Meni Nurie"
 msgstr "מני נוריאל"
+
+#~ msgid "Scope"
+#~ msgstr "היקף משרה"
 
 #~ msgid "Hybrid"
 #~ msgstr "היברידי"

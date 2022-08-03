@@ -48,3 +48,7 @@ article>*:not(.entry-content),
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
+
+.entry-content p.mb-0 {
+    margin-bottom: 0 !important;
+}

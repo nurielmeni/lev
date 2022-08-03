@@ -2,4 +2,4 @@
 <div class="md:text-2xl md:text-3xl"></div>
 <div class="bg-[#fff] bg-[#eee]"></div>
 <div class="drop-shadow-md rounded-full"></div>
-<div class="scale-150"></div>
+<div class="scale-150 mb-16 md:pa-4"></div>

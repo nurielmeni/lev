@@ -18,18 +18,19 @@
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
 
-        <!-- SCOPE -->
+        <!-- Employment Type -->
         <?= render('form/nlsSelectField', [
             'wrapperClass' => 'sumo text-xl col-span-2 sm:col-span-1',
-            'class' => 'rounded-md shadow-md px-3 py-2 text-primary md:text-2xl',
-            'name' => 'scope',
-            'placeHolder' => __('Scope', 'NlsHunter'),
-            'options' => $scopeOptions,
+            'class' => 'rounded-md shadow-md border-0 px-3 py-2 text-primary md:text-2xl',
+            'name' => 'employment-type',
+            'placeHolder' => __('EmploymentType', 'NlsHunter'),
+            'options' => $employmentType,
             'clearAllButton' => true, // For single select
             'multiple' => false,
-            'value' => key_exists('scope', $searchParams) ? $searchParams['scope'] : [],
+            'value' => key_exists('employment-type', $searchParams) ? $searchParams['employment-type'] : [],
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
+
 
         <!-- LOCATION -->
         <?= render('form/nlsSelectField', [
@@ -44,16 +45,16 @@
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
 
-        <!-- Employment Type -->
+        <!-- EMPLOYMENT FORM -->
         <?= render('form/nlsSelectField', [
             'wrapperClass' => 'sumo text-xl col-span-2 sm:col-span-1',
-            'class' => 'rounded-md shadow-md border-0 px-3 py-2 text-primary md:text-2xl',
-            'name' => 'employment-type',
-            'placeHolder' => __('EmploymentType', 'NlsHunter'),
-            'options' => $employmentType,
+            'class' => 'rounded-md shadow-md px-3 py-2 text-primary md:text-2xl',
+            'name' => 'employment-form',
+            'placeHolder' => __('Employment Form', 'NlsHunter'),
+            'options' => $employmentForm,
             'clearAllButton' => true, // For single select
             'multiple' => false,
-            'value' => key_exists('employment-type', $searchParams) ? $searchParams['employment-type'] : [],
+            'value' => key_exists('employment-form', $searchParams) ? $searchParams['employment-form'] : [],
             'clearAllButtonClass' => 'hidden bg-primary text-white py-1 px-2 mx-1 border border-primary rounded-xl', // For single select
         ]) ?>
 

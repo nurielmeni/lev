@@ -6,7 +6,7 @@
     <div class="container w-full <?= key_exists('overlay_color', $atts) ? 'bg-[' . $atts['overlay_color'] . ']' : 'bg-[#fff]'  ?> bg-opacity-90 mx-auto hadow-md relative z-20">
         <?= render('search/form', [
             'categoryOptions' => $categoryOptions,
-            'scopeOptions' =>  $scopeOptions,
+            'employmentForm' =>  $employmentForm,
             'locationOptions' => $locationOptions,
             'employmentType' =>  $employmentType,
             'searchResultsUrl' => $searchResultsUrl,

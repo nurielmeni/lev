@@ -272,6 +272,44 @@ class NlsDirectory extends NlsService
         }
     }
 
+    public function getJobEmploymentForm()
+    {
+        $transactionCode = NlsHelper::newGuid();
+        try {
+            $params = array(
+                "transactionCode" => $transactionCode,
+                "listName" => 'EmploymentForm',
+                "languageId" => $this->langCode,
+                "parentItemId" => null
+            );
+            $res = $this->client->GetListItems($params);
+            if (!property_exists($res, 'GetListItemsResult') || !property_exists($res->GetListItemsResult, 'ListItemInfo'))
+                return [];
+
+            $result = $res->GetListItemsResult->ListItemInfo;
+
+            if (!is_array($result)) $result[] = $result;
+
+            $list = [];
+            foreach ($result as $enploymentForm) {
+                $list[] = [
+                    "id" => $enploymentForm->ListItemValue,
+                    "name" => $enploymentForm->ValueTranslated
+                ];
+            }
+
+            return $list;
+        } catch (Exception $ex) {
+            /**
+             * var_dump($ex);
+             * echo "Request " . $this->client->__getLastRequest();
+             * echo "Response " . $this->client->__getLastResponse();
+             * die;
+             **/
+            throw new Exception('Error: Niloos services are not availiable, try later.');
+        }
+    }
+
     public function getjoblocations()
     {
         $list = array(

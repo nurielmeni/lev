@@ -1,5 +1,5 @@
 <?php
-include_once NLS__PLUGIN_PATH . '/includes/public/class-ApplicantDetails.php.php';
+include_once NLS__PLUGIN_PATH . 'includes/public/class-ApplicantDetails.php.php';
 ?>
 
 <html lang="he">

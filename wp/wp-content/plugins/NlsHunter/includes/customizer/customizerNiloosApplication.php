@@ -45,17 +45,17 @@ function add_niloos_application_section($wp_customize, $panel)
   /**
    * Add the Hot Jobs Supplier Id
    */
-  // $wp_customize->add_setting('setting_' . NlsConfig::NLS_HOT_JOBS_SUPPLIER_ID, array(
-  //   'default' => '',
-  //   'type' => 'option',
-  // ));
+  $wp_customize->add_setting('setting_' . NlsConfig::NLS_HOT_JOBS_SUPPLIER_ID, array(
+    'default' => '',
+    'type' => 'option',
+  ));
 
-  // $wp_customize->add_control('control_' . NlsConfig::NLS_HOT_JOBS_SUPPLIER_ID, array(
-  //   'label' => __('Set the application Hot Jobs supplier ID', 'NlsHunter'),
-  //   'section' => $section->id,
-  //   'settings' => 'setting_' . NlsConfig::NLS_HOT_JOBS_SUPPLIER_ID,
-  //   'type' => 'text'
-  // ));
+  $wp_customize->add_control('control_' . NlsConfig::NLS_HOT_JOBS_SUPPLIER_ID, array(
+    'label' => __('Hot Jobs supplier ID', 'NlsHunter'),
+    'section' => $section->id,
+    'settings' => 'setting_' . NlsConfig::NLS_HOT_JOBS_SUPPLIER_ID,
+    'type' => 'text'
+  ));
 
   /**
    * Add the To Web Mail

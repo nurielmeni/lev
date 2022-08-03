@@ -319,6 +319,25 @@ class NlsHunter_model
         }
     }
 
+    public function jobEmploymentForm()
+    {
+        $this->initDirectoryService();
+
+        $cacheKey = 'JOB_EMPLOYMENT_FORM';
+        $jobEmploymentForm = wp_cache_get($cacheKey);
+        try {
+            if (false === $jobEmploymentForm) {
+                $jobEmploymentForm = $this->nlsDirectory->getJobEmploymentForm();
+                wp_cache_set($cacheKey, $jobEmploymentForm, 'directory', $this->nlsCacheTime);
+            }
+
+            return is_array($jobEmploymentForm) ? $jobEmploymentForm : [];
+        } catch (Exception $ex) {
+            $this->notice('Model: jobEmploymentForm', $ex->getMessage());
+            return null;
+        }
+    }
+
     public function jobAreas()
     {
         $this->initDirectoryService();
@@ -420,11 +439,11 @@ class NlsHunter_model
         }
     }
 
-    public function getHotJobs($professionalFields = null)
+    public function getHotJobs($supplierId = null)
     {
-        $searchParams = is_array($professionalFields) ? ['' => $professionalFields] : [];
+        $supplierId = $supplierId ? $supplierId : $this->nlsConfig->getNlsHotJobsSupplierId();
 
-        $res =  $this->getJobHunterExecuteNewQuery2($searchParams, null, 0, $this->nlsConfig->getNlsHotJobsCount());
+        $res =  $this->getJobHunterExecuteNewQuery2([], null, 0, $this->nlsConfig->getNlsHotJobsCount(), $supplierId);
         return is_array($res) && key_exists('list', $res) ?  $res['list'] : [];
     }
 
@@ -473,19 +492,20 @@ class NlsHunter_model
         $arr[] = $field;
     }
 
-    public function getJobHunterExecuteNewQuery2($searchParams = [], $hunterId = null, $page = 0, $resultRowLimit = null)
+    public function getJobHunterExecuteNewQuery2($searchParams = [], $hunterId = null, $page = 0, $resultRowLimit = null, $supplierId = null)
     {
+        $supplierId = $supplierId ? $supplierId : $this->nlsGetSupplierId();
         $resultRowLimit = $resultRowLimit ? $resultRowLimit : $this->nlsConfig->getNlsJobsCount();
         $resultRowOffset = is_int($page) ? $page * $resultRowLimit : false;
         $category = key_exists('category', $searchParams) ? $searchParams['category'] : false;
-        $scope = key_exists('scope', $searchParams) ? $searchParams['scope'] : false;
+        $employmentForm = key_exists('employment-form', $searchParams) ? $searchParams['employment-form'] : false;
         $region = key_exists('region', $searchParams) ? $searchParams['region'] : false;
         $employmentType = key_exists('employment-type', $searchParams) ? $searchParams['employment-type'] : false;
         $keyword = key_exists('keyword', $searchParams) ? $searchParams['keyword'] : false;
 
         $cache_key = 'nls_hunter_jobs_' .
             $this->joinVals($category) . '_' .
-            $this->joinVals($scope) . '_' .
+            $this->joinVals($employmentForm) . '_' .
             $this->joinVals($region) . '_' .
             $this->joinVals($employmentType) . '_' .
             $resultRowOffset . '_' .
@@ -501,7 +521,7 @@ class NlsHunter_model
             if (!is_array($searchParams)) $jobs = [];
             $filter = new NlsFilter();
 
-            $filter->addSuplierIdFilter($this->nlsGetSupplierId());
+            $filter->addSuplierIdFilter($supplierId);
 
             /**
              * Category
@@ -514,10 +534,10 @@ class NlsHunter_model
             }
 
             /**
-             * Scope
+             * Employment Form
              */
-            if ($scope) {
-                $filterField = new FilterField('JobScope', SearchPhrase::EXACT, $scope, NlsFilter::NUMERIC_VALUES);
+            if ($employmentForm) {
+                $filterField = new FilterField('EmploymentForm', SearchPhrase::EXACT, $employmentForm, NlsFilter::TERMS_NON_ANALAYZED);
                 $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
             }
 
@@ -528,6 +548,7 @@ class NlsHunter_model
                 $filterField = new FilterField('RegionId', SearchPhrase::EXACT, $region, NlsFilter::NUMERIC_VALUES);
                 $filter->addWhereFilter($filterField, is_array($filterField) ? WhereCondition::C_OR : WhereCondition::C_AND);
             }
+
 
             /**
              * Employment Type

@@ -214,7 +214,7 @@ class NlsHunter_Public
         if (!empty($tmpAdditionalFile)) array_push($files, $tmpAdditionalFile);
 
         // 3. Send email with file attachments
-        $count += $this->sendHtmlMail($files, $applicantData, 0) ? 1 : 0;
+        $count += 1; //$this->sendHtmlMail($files, $applicantData, 0) ? 1 : 0;
 
         // 4. Remove temp files
 
